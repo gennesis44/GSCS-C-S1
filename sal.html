@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSCSI — Axiom 2: Salud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4a843;
+    --bone: #f0ebe0;
+    --dim: #6a6a6a;
+    --green: #39ff14;
+    --cyan: #00bfff;
+    --alert: #e85c3a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #000; }
+  body {
+    background: #000; color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px; line-height: 1.85;
+  }
+  #gscsi-side {
+    position: fixed; left: 0; top: 0; width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--alert), var(--gold), var(--green));
+    opacity: .3;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 16px 80px; }
+  nav.back { margin-bottom: 28px; }
+  nav.back a { color: var(--cyan); text-decoration: none; font-size: 12px; }
+  .eyebrow { font-size: 10px; letter-spacing: .5em; color: var(--dim); text-transform: uppercase; display: block; margin-bottom: 14px; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 7vw, 68px); line-height: .92; }
+  h1 em { color: var(--gold); font-style: normal; }
+  .sub { color: var(--gold); font-family: 'Libre Baskerville', serif; margin: 12px 0 28px; }
+  p { color: #b0d4b8; margin-bottom: 12px; }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--gold); margin: 24px 0 12px; }
+  .node {
+    background: #0a0a0a; border-left: 3px solid var(--green);
+    padding: 16px 18px; margin: 12px 0;
+  }
+  .node .k { font-size: 11px; letter-spacing: .2em; color: var(--alert); }
+  .node h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #fff; margin: 4px 0 8px; }
+  .node a { color: var(--cyan); text-decoration: none; font-size: 12px; letter-spacing: .08em; }
+  .note { border-left: 3px solid var(--gold); padding: 14px 16px; margin: 20px 0; color: var(--bone); }
+  footer { margin-top: 48px; font-size: 11px; color: var(--dim); }
+  footer a { color: var(--cyan); text-decoration: none; }
+</style>
+</head>
+<body>
+<div id="gscsi-side"></div>
+<div class="wrap">
+  <nav class="back"><a href="index.html">← GSCSI index</a> · <a href="ptp.html">ptp</a> · <a href="lim.html">L</a> · <a href="eduu.html">E</a> · <a href="dic.html">D</a></nav>
+  <span class="eyebrow">SLED Module — Carbon Vessel Maintenance</span>
+  <h1>Axiom 2: <em>Salud</em></h1>
+  <p class="sub">S — Health is the substrate</p>
+  <p>Health is the substrate that carries every other Axiom. A degraded Carbon vessel cannot execute Discipline, cannot sustain Education, cannot hold the line on Sovereignty. The body is not separate from the mission — it is the hardware the mission runs on.</p>
+
+  <h2>Core Health Nodes</h2>
+
+  <div class="node">
+    <div class="k">S-01 // FUEL</div>
+    <h3>Nutritional Baseline</h3>
+    <p>Structured, whole-food intake stabilizes energy and cognitive output across the day. What enters the system determines what the system can execute.</p>
+    <a href="https://www.who.int/health-topics/nutrition">SOURCE: WHO NUTRITION →</a>
+  </div>
+  <div class="node">
+    <div class="k">S-02 // REPAIR</div>
+    <h3>Sleep as Maintenance</h3>
+    <p>Sleep is not downtime — it is the nightly maintenance cycle that consolidates memory and repairs the vessel. Skipping it degrades every other node.</p>
+    <a href="https://www.sleepfoundation.org/how-sleep-works">SOURCE: SLEEP FOUNDATION →</a>
+  </div>
+  <div class="node">
+    <div class="k">S-03 // MOTION</div>
+    <h3>Movement Requirement</h3>
+    <p>Regular physical movement sustains the vessel's efficiency and its capacity to process stress. Sedentary drift is the slow failure mode of the body.</p>
+    <a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity">SOURCE: WHO ACTIVITY GUIDE →</a>
+  </div>
+  <div class="node">
+    <div class="k">S-04 // HYDRATION</div>
+    <h3>Baseline Hydration</h3>
+    <p>Cognitive clarity and physical performance both degrade under mild dehydration before thirst is even registered. Maintain the baseline proactively.</p>
+    <a href="https://www.hsph.harvard.edu/nutritionsource/water/">SOURCE: HARVARD NUTRITION →</a>
+  </div>
+  <div class="node">
+    <div class="k">S-05 // RECOVERY</div>
+    <h3>Stress Recovery Cycles</h3>
+    <p>Sustained output requires deliberate recovery windows — not as weakness, but as the mechanism that makes the next execution cycle possible.</p>
+    <a href="https://www.apa.org/topics/stress">SOURCE: APA ON STRESS →</a>
+  </div>
+
+  <p class="note"><strong>● SYSTEM NOTE.</strong> This node is informational, not medical guidance. Persistent health concerns should be routed to a licensed physician — that channel is not a weakness in the system, it is part of it.</p>
+  <p>Core reference: World Health Organization — <a href="https://www.who.int">who.int</a> · Matthew Walker — <a href="https://www.sleepdiplomat.com">Why We Sleep</a> · Harvard T.H. Chan School — <a href="https://www.hsph.harvard.edu/nutritionsource/">Nutrition Source</a></p>
+  <p>Health is the load-bearing wall of the SLED structure. Everything else stands on it.</p>
+
+  <footer>GSCSI Node sal · Axiom 2 Salud · Weebly runtime expelled</footer>
+</div>
+</body>
+</html>
