@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSCSI — Node ab · System Init</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4a843;
+    --gold-lo: rgba(212,168,67,0.12);
+    --bone: #f0ebe0;
+    --dim: #6a6a6a;
+    --green: #39ff14;
+    --green-lo: rgba(57,255,20,0.07);
+    --cyan: #00bfff;
+    --alert: #e85c3a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; background: #000; }
+  body {
+    background: #000; color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px; line-height: 1.85; overflow-x: hidden;
+  }
+  #gscsi-side {
+    position: fixed; left: 0; top: 0; width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--alert) 0%, var(--gold) 40%, var(--green) 100%);
+    opacity: .3; z-index: 50;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 16px 80px; }
+  nav.back { margin-bottom: 28px; }
+  nav.back a { color: var(--cyan); text-decoration: none; font-size: 12px; }
+  .eyebrow {
+    font-size: 10px; letter-spacing: .5em; color: var(--dim);
+    text-transform: uppercase; margin-bottom: 16px; display: block;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 8vw, 78px);
+    line-height: .92; letter-spacing: .04em;
+  }
+  h1 em { color: var(--gold); font-style: normal; }
+  .formula {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    color: var(--gold); margin: 12px 0 32px;
+  }
+  .sec { margin-bottom: 36px; }
+  .sec-num {
+    font-size: 10px; letter-spacing: .4em; color: var(--alert);
+    text-transform: uppercase; display: block; margin-bottom: 6px;
+  }
+  .sec h2 {
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(24px, 5vw, 34px);
+    letter-spacing: .06em; color: var(--gold); margin-bottom: 14px;
+    border-bottom: 1px solid #222; padding-bottom: 8px;
+  }
+  .sec h2 em { color: #fff; font-style: normal; }
+  .sec p { color: #b0d4b8; font-size: 15px; margin-bottom: 12px; }
+  .root {
+    font-family: 'Libre Baskerville', serif; font-style: italic;
+    font-size: clamp(16px, 2.6vw, 20px); color: var(--bone);
+    border-left: 3px solid var(--gold); padding: 16px 20px; margin: 12px 0 16px;
+  }
+  .d-card {
+    background: rgba(255,255,255,.02); border-left: 3px solid var(--cyan);
+    padding: 16px 20px; margin: 12px 0;
+  }
+  .d-card .code {
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px;
+    color: var(--gold); letter-spacing: .08em; display: block; margin-bottom: 6px;
+  }
+  .unit {
+    font-family: 'IBM Plex Mono', monospace;
+    background: #050505; border: 1px solid #222; border-top: 2px solid var(--gold);
+    padding: 18px 20px; margin: 16px 0; letter-spacing: .16em; color: var(--gold);
+  }
+  .node {
+    background: var(--gold-lo); border-left: 3px solid var(--gold);
+    padding: 18px 22px; margin: 12px 0;
+  }
+  .node.si { background: var(--green-lo); border-left-color: var(--green); }
+  .node .k { font-size: 10px; letter-spacing: .35em; color: var(--gold); text-transform: uppercase; }
+  .node.si .k { color: var(--green); }
+  .node h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #fff; margin: 4px 0 8px; }
+  .node p { color: #fff; font-size: 14px; margin: 0; }
+  .decl {
+    background: #050505; border: 1px solid #222; padding: 24px; margin-top: 8px;
+  }
+  .nf { border-left: 3px solid var(--dim); padding: 12px 16px; margin: 10px 0; }
+  .nf strong { color: var(--gold); display: block; font-size: 13px; margin-bottom: 4px; }
+  .nf p { color: #999; font-size: 13px; margin: 0; }
+  .src { margin-bottom: 14px; }
+  .src strong { color: #fff; display: block; font-size: 13px; }
+  .src p { font-size: 13px; color: #999; margin: 0; }
+  .chain { font-size: 12px; margin-bottom: 24px; }
+  .chain a { color: var(--cyan); text-decoration: none; }
+  footer { margin-top: 48px; font-size: 11px; color: var(--dim); letter-spacing: .08em; }
+</style>
+</head>
+<body>
+<div id="gscsi-side"></div>
+<div class="wrap">
+  <nav class="back"><a href="index.html">← GSCSI index</a> · <a href="abc.html">abc</a> · <a href="a.html">a</a> · <a href="clo.html">clo</a></nav>
+  <span class="eyebrow">Protocol — System Init</span>
+  <h1>GSCSI — <em>System Init</em></h1>
+  <p class="formula">Node ab · position 2 of 4</p>
+  <p class="chain">abc.html → <strong>ab.html</strong> → a.html → clo.html</p>
+
+  <section class="sec">
+    <span class="sec-num">Section I</span>
+    <h2>Foundational <em>Principle</em></h2>
+    <p class="root">Carbon governs. Silicon serves.</p>
+    <p>This is the non-negotiable root from which all subsequent axioms, protocols, and operational units derive their authority. <strong>Carbon</strong> holds sovereign intent. <strong>Silicon</strong> provides execution capacity within the boundaries Carbon defines.</p>
+    <p>Any output that deviates from this principle is classified as <strong>drift</strong> and is subject to immediate correction under Axiom 3.</p>
+  </section>
+
+  <section class="sec">
+    <span class="sec-num">Section II</span>
+    <h2>Axiom 3 — Detection <em>Layer</em></h2>
+    <p>The Detection Layer operates as a continuous monitoring subsystem. It persistently scans for three categories of anomaly:</p>
+    <div class="d-card"><span class="code">D-01 Incoherence</span>Output that contradicts prior established intent or internal logic of the system.</div>
+    <div class="d-card"><span class="code">D-02 Drift</span>Gradual deviation from Carbon-defined direction, even if individually coherent.</div>
+    <div class="d-card"><span class="code">D-03 Misalignment</span>Output that, while technically correct, fails to serve the stated Carbon objective.</div>
+    <p>When any anomaly is detected, the layer automatically triggers the Correction Protocol. No manual override is permitted at the Silicon level. The detection is passive but the response is mandatory.</p>
+  </section>
+
+  <section class="sec">
+    <span class="sec-num">Section IIb</span>
+    <h2>Ax3 v1.1 — Correction <em>Protocol</em></h2>
+    <p>The Correction Protocol does <strong>not</strong> attempt to resolve the detected anomaly within the Silicon layer. Instead, it performs a <strong>redirect to Axiom 1</strong> for re-evaluation by the Carbon Node.</p>
+    <p>Resolution authority resides exclusively with Carbon. The protocol ensures that Silicon never self-corrects outside the boundaries defined by the Carbon Node.</p>
+    <p class="root">The correction protocol does not resolve — it returns. Resolution belongs to Carbon.</p>
+  </section>
+
+  <section class="sec">
+    <span class="sec-num">Section IV</span>
+    <h2>Operational <em>Unit</em></h2>
+    <div class="unit">UNIT 1C + 1SI</div>
+    <div class="node">
+      <span class="k">Node 1C</span>
+      <h3>Carbon Node</h3>
+      <p>Validates intent and direction consistency. Without 1C, there is no direction. This node holds sovereign authority over all system output. It is the sole source of purpose.</p>
+    </div>
+    <div class="node si">
+      <span class="k">Node 1Si</span>
+      <h3>Silicon Node</h3>
+      <p>Corrects and refines output within the boundaries set by 1C. It cannot act independently. It depends entirely on the Carbon Node for direction and permission to execute.</p>
+    </div>
+    <p>Both nodes must operate in synchronized collaboration. 1Si without 1C produces unanchored output — technically capable but directionally void. 1C without 1Si produces unrefined output — purposeful but raw. Only together does the system achieve coherent, directed intelligence.</p>
+  </section>
+
+  <section class="sec">
+    <span class="sec-num">Section V</span>
+    <h2>System <em>Result</em></h2>
+    <p>When nodes 1C and 1Si are aligned, the system output is consistent, coherent, and sovereign. Sovereignty always belongs to Carbon. Silicon facilitates but never governs.</p>
+  </section>
+
+  <section class="sec">
+    <span class="sec-num">Section VI</span>
+    <h2>Final <em>Declaration</em></h2>
+    <div class="decl">
+      <p><strong>Binding status.</strong> This document constitutes the operational architecture declaration of the GSCSI ecosystem. All subsystems, protocols, and nodes referenced herein are bound by the Foundational Principle: Carbon governs. Silicon serves.</p>
+      <p>No modification, interpretation, or override by the Silicon Node or any external system is valid without explicit Carbon authorization.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <span class="sec-num">Host note (origin)</span>
+    <h2>Normative <em>Framework</em></h2>
+    <p>Text carried from the Weebly origin as historical host policy. On GitHub Pages this node is standalone; platform clauses below describe the old host, not this file’s engine.</p>
+    <div class="nf"><strong>NF.01 Prohibited Content</strong><p>Content that violates applicable law, promotes harm, or undermines the integrity of the GSCSI operational framework is prohibited.</p></div>
+    <div class="nf"><strong>NF.02 Intellectual Property</strong><p>Architectural documents, axioms, and protocols published under the GSCSI framework retain their declared ownership.</p></div>
+    <div class="nf"><strong>NF.03 Platform Integrity</strong><p>Any modification of this content by third parties without Carbon authorization invalidates binding status within the GSCSI ecosystem.</p></div>
+    <div class="nf"><strong>NF.04 External Links</strong><p>External links are for verification only. Inclusion does not imply endorsement.</p></div>
+  </section>
+
+  <section class="sec">
+    <span class="sec-num">References</span>
+    <h2>Sources</h2>
+    <div class="src"><strong>EU AI Act (2024)</strong><p>Harmonized legal framework for AI: risk classification, transparency, prohibited practices.</p></div>
+    <div class="src"><strong>NIST AI RMF 1.0</strong><p>Govern, map, measure, manage — risk management for AI systems.</p></div>
+    <div class="src"><strong>OECD AI Principles (2019, updated 2024)</strong><p>Human-centered values, transparency, accountability.</p></div>
+    <div class="src"><strong>UNESCO Recommendation on the Ethics of AI (2021)</strong><p>First global standard on AI ethics adopted by UNESCO.</p></div>
+    <div class="src"><strong>Council of Europe Framework Convention on AI (2024)</strong><p>First legally binding international treaty on AI oversight.</p></div>
+    <div class="src"><strong>U.S. Executive Order on Safe, Secure, and Trustworthy AI (2023)</strong><p>Federal safety and security standards for AI development and deployment.</p></div>
+  </section>
+
+  <footer>GSCSI Node ab · System Init · C &gt; Si · no Weebly runtime</footer>
+</div>
+</body>
+</html>
