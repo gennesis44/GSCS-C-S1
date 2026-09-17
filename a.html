@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSCSI — Node a · Manifesto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4a843;
+    --gold-lo: rgba(212,168,67,0.12);
+    --bone: #f0ebe0;
+    --dim: #6a6a6a;
+    --green: #39ff14;
+    --cyan: #00bfff;
+    --alert: #e85c3a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; background: #000; }
+  body {
+    background: #000; color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px; line-height: 1.85; overflow-x: hidden;
+  }
+  #gscsi-side {
+    position: fixed; left: 0; top: 0; width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--alert) 0%, var(--gold) 40%, var(--green) 100%);
+    opacity: .3; z-index: 50;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 16px 80px; }
+  nav.back { margin-bottom: 28px; }
+  nav.back a { color: var(--cyan); text-decoration: none; font-size: 12px; }
+  .eyebrow {
+    font-size: 10px; letter-spacing: .5em; color: var(--dim);
+    text-transform: uppercase; margin-bottom: 16px; display: block;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 8vw, 78px);
+    line-height: .92; letter-spacing: .04em;
+  }
+  h1 em { color: var(--gold); font-style: normal; }
+  .formula {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    color: var(--gold); margin: 12px 0 32px;
+  }
+  .stone { margin-bottom: 44px; }
+  .stone-num {
+    font-size: 10px; letter-spacing: .4em; color: var(--alert);
+    text-transform: uppercase; display: block; margin-bottom: 6px;
+  }
+  .stone h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(24px, 5vw, 34px);
+    letter-spacing: .06em; color: var(--gold);
+    margin-bottom: 14px; border-bottom: 1px solid #222; padding-bottom: 8px;
+  }
+  .stone h2 em { color: #fff; font-style: normal; }
+  .stone p { color: #b0d4b8; font-size: 15px; margin-bottom: 12px; }
+  .quote {
+    font-family: 'Libre Baskerville', serif; font-style: italic;
+    color: var(--bone); border-left: 3px solid var(--gold);
+    padding: 16px 20px; margin: 16px 0;
+  }
+  .duo { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 18px 0; }
+  @media (min-width: 560px) { .duo { grid-template-columns: 1fr 1fr; } }
+  .duo div { padding: 18px 20px; background: #0a0a0a; border: 1px solid #1a1a1a; }
+  .duo .k { font-size: 10px; letter-spacing: .3em; color: var(--dim); text-transform: uppercase; }
+  .duo h3 { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--gold); }
+  .duo p { color: #ccc; font-size: 13px; margin: 0; }
+  .stats { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 18px 0; }
+  @media (min-width: 560px) { .stats { grid-template-columns: 1fr 1fr 1fr; } }
+  .stat { background: var(--gold-lo); border-left: 3px solid var(--gold); padding: 16px; }
+  .stat b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: #fff; }
+  .stat span { font-size: 11px; color: var(--dim); letter-spacing: .08em; text-transform: uppercase; }
+  .hit { border-bottom: 1px solid #1a1a1a; padding: 12px 0 12px 20px; position: relative; }
+  .hit::before { content: '→'; position: absolute; left: 0; color: var(--alert); }
+  .hit strong { color: #fff; }
+  .sled { background: #0a0a0a; border-left: 3px solid var(--green); padding: 18px 20px; margin: 12px 0; }
+  .sled .letter {
+    font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--gold); line-height: 1;
+  }
+  .sled h3 { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #fff; margin: 4px 0 8px; }
+  .sled p { color: #b0d4b8; font-size: 14px; margin: 0; }
+  .adapt { border-left: 3px solid var(--cyan); padding: 16px 20px; margin: 12px 0; background: rgba(0,191,255,.05); }
+  .adapt .n { font-size: 10px; letter-spacing: .3em; color: var(--cyan); }
+  .adapt h3 { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #fff; margin: 4px 0 8px; }
+  .adapt p { color: #b0d4b8; font-size: 14px; margin: 0; }
+  .cta {
+    display: inline-block; margin-top: 18px; padding: 14px 32px;
+    background: var(--gold); color: #000 !important;
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px;
+    letter-spacing: .12em; text-decoration: none; text-transform: uppercase;
+  }
+  .src { margin-bottom: 16px; }
+  .src .k { font-size: 10px; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+  .src p { font-size: 13px; color: #999; }
+  .src a { color: var(--cyan); text-decoration: none; word-break: break-word; }
+  footer { margin-top: 48px; font-size: 11px; color: var(--dim); letter-spacing: .08em; }
+</style>
+</head>
+<body>
+<div id="gscsi-side"></div>
+<div class="wrap">
+  <nav class="back"><a href="index.html">← GSCSI index</a> · <a href="abc.html">abc</a> · <a href="ab.html">ab</a> · <a href="clo.html">clo</a></nav>
+  <span class="eyebrow">Protocol — Manifesto</span>
+  <h1>GSCSI — <em>Carbon Above Silicon</em></h1>
+  <p class="formula">Node a · position 3 of 4</p>
+
+  <section class="stone">
+    <span class="stone-num">Stone I — Vision</span>
+    <h2>The GSCSI <em>Manifesto</em></h2>
+    <p>There is a war underway. It is not fought with weapons or armies. It is fought in the mind of every child born on this planet today.</p>
+    <p>On one side, <strong>Carbon</strong>: human biology, consciousness, character forged through effort, identity built over time. On the other, <strong>Silicon</strong>: artificial intelligence algorithms engineered to capture attention, shape behavior, and optimize engagement — not human development.</p>
+    <p class="quote">We do not need to ban technology. We need to ensure that human beings arrive at it from a position of strength, not dependence.</p>
+    <div class="duo">
+      <div>
+        <span class="k">The origin</span>
+        <h3>Carbon</h3>
+        <p>Biology · Character · Consciousness · Real effort</p>
+      </div>
+      <div>
+        <span class="k">The environment</span>
+        <h3>Silicon</h3>
+        <p>Algorithms · Attention · Dopamine · Control</p>
+      </div>
+    </div>
+    <p>GSCSI was built as a response infrastructure. It is not a parental control app. It is a sovereignty framework: a living system designed to shield the character of the next generation before algorithms colonize it.</p>
+    <p>This manifesto is five stones. Each one supports the next. Together, they form the foundation of a legacy designed to last 200 years.</p>
+  </section>
+
+  <section class="stone">
+    <span class="stone-num">Stone II — The Problem</span>
+    <h2>The World That <em>Already Arrived</em></h2>
+    <p>Over the next 15–20 years, artificial intelligence will be present in nearly every major decision in a child's life: what they watch, what they learn, who they talk to, how they play, and how they regulate themselves emotionally.</p>
+    <p>The problem is not technology. The problem is that we are letting that technology grow <strong>without a clear human direction</strong>.</p>
+    <div class="stats">
+      <div class="stat"><b>4–7h</b><span>screens per day · average child</span></div>
+      <div class="stat"><b>0 h</b><span>designed to build character</span></div>
+      <div class="stat"><b>200 yr</b><span>consequences starting today</span></div>
+    </div>
+    <p>Most of that screen time is controlled by algorithms designed to maximize attention, not to build character. The outcome is predictable:</p>
+    <div class="hit"><strong>Attention and discipline deficits</strong> — the capacity for sustained effort is eroded by design.</div>
+    <div class="hit"><strong>Deteriorating physical and mental health</strong> — sedentary behavior, anxiety, and fragmented sleep as the norm.</div>
+    <div class="hit"><strong>Loss of cognitive autonomy</strong> — the algorithm decides which information deserves attention.</div>
+    <div class="hit"><strong>A growing sovereignty gap</strong> — those who control their technology versus those controlled by it.</div>
+    <p>Two hundred years from now, today's children will be the ancestors of a world where AI is thousands of times more powerful than it is today. If we do not give them the tools to put Carbon above Silicon from an early age, they will not do it later.</p>
+    <p>Waiting for institutions to act means surrendering the sovereignty of our children to the first system that claims it.</p>
+  </section>
+
+  <section class="stone">
+    <span class="stone-num">Stone III — The Solution</span>
+    <h2>The <em>SLED</em> Framework</h2>
+    <p>To protect Carbon's sovereignty against the advance of Silicon, we do not need to ban technology. We need to structure life. GSCSI operates under the SLED system: four universal pillars designed to shield the character of future generations.</p>
+    <div class="sled"><span class="letter">S</span><h3>Salud</h3><p>Biological calibration. Circadian rhythms, block digital stimuli before rest, demand real movement. If the body is not strong, the mind is vulnerable to algorithmic control.</p></div>
+    <div class="sled"><span class="letter">L</span><h3>Limpieza y Orden</h3><p>Environmental detox. Physical order and digital hygiene: manage technological waste, clean feeds, create space free of visual pollution for deep thinking.</p></div>
+    <div class="sled"><span class="letter">E</span><h3>Educación</h3><p>Critical thinking and knowledge sovereignty. Silicon does not think for the child; it becomes a tutor that teaches them to separate truth from falsehood.</p></div>
+    <div class="sled"><span class="letter">D</span><h3>Disciplina</h3><p>The bridge between potential and achievement. Dopamine earned through real effort. Physical responsibilities before recreational tools.</p></div>
+  </section>
+
+  <section class="stone">
+    <span class="stone-num">Stone IV — System in Action</span>
+    <h2><em>Adaptive</em> Responses</h2>
+    <p>The SLED framework is not a rigid block of rules. It is a living architecture that adapts to the geographic, cultural, and connectivity reality of every child:</p>
+    <div class="adapt"><span class="n">01</span><h3>Connected Urban Environments</h3><p>Excess equalizer. Detects sedentary behavior and screen overuse, demands physical activity, blocks recreational access during critical hours.</p></div>
+    <div class="adapt"><span class="n">02</span><h3>High-Density Growth Environments</h3><p>Resource optimizer. Offline-first architecture: lightweight logic and education modules downloaded during stable connectivity windows.</p></div>
+    <div class="adapt"><span class="n">03</span><h3>Rural and Community Environments</h3><p>Knowledge bridge. Translates earth cycles and local traditions into universal scientific concepts without isolating the child from global progress.</p></div>
+    <p>One framework. Three realities. One objective: Carbon arrives at Silicon from strength, not dependence.</p>
+  </section>
+
+  <section class="stone">
+    <span class="stone-num">Stone V — Action</span>
+    <h2>Secure the <em>Legacy</em></h2>
+    <p>The technological asymmetry advances every day. Waiting for institutions to act means surrendering the sovereignty of children to corporations whose goals are not the development of human character.</p>
+    <p>This Manifesto is the first stone of a legacy designed for the next 200 years. If you are a parent, educator, thinker, or guardian of Carbon, action starts today.</p>
+    <p><strong>Join the infrastructure. Integrate SLED. Put Carbon above Silicon.</strong></p>
+    <a class="cta" href="why.html">The Why →</a>
+  </section>
+
+  <section class="stone">
+    <span class="stone-num">Sources</span>
+    <h2>References</h2>
+    <div class="src">
+      <div class="k">Stone II — Screen time</div>
+      <p>[1] CDC / NCHS Data Brief #513 (October 2024). Zablotsky et al. Daily screen time among teenagers.<br>
+      <a href="https://www.cdc.gov/nchs/data/databriefs/db513.pdf">cdc.gov/nchs/data/databriefs/db513.pdf</a></p>
+      <p>[2] Pew Research Center (December 2024). Teens, Social Media and Technology 2024.<br>
+      <a href="https://www.pewresearch.org/internet/2024/12/12/teens-social-media-and-technology-2024/">pewresearch.org</a></p>
+    </div>
+    <div class="src">
+      <div class="k">Institutional guidelines</div>
+      <p>[3] WHO (2019). Guidelines on physical activity, sedentary behaviour and sleep for children under 5.<br>
+      <a href="https://www.who.int/publications/i/item/9789241550536">who.int</a></p>
+    </div>
+  </section>
+
+  <footer>GSCSI Node a · Manifesto · C &gt; Si · Est. 2025 · no Weebly runtime</footer>
+</div>
+</body>
+</html>
