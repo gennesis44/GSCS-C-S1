@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSCSI — Node clo · Field Read</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4a843;
+    --gold-lo: rgba(212,168,67,0.12);
+    --bone: #f0ebe0;
+    --dim: #6a6a6a;
+    --green: #39ff14;
+    --cyan: #00bfff;
+    --alert: #e85c3a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #000; }
+  body {
+    background: #000; color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px; line-height: 1.85;
+  }
+  #gscsi-side {
+    position: fixed; left: 0; top: 0; width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--alert), var(--gold), var(--green));
+    opacity: .3;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 16px 80px; }
+  nav.back { margin-bottom: 28px; }
+  nav.back a { color: var(--cyan); text-decoration: none; font-size: 12px; }
+  .eyebrow { font-size: 10px; letter-spacing: .5em; color: var(--dim); text-transform: uppercase; display: block; margin-bottom: 14px; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(42px, 8vw, 78px); line-height: .92; }
+  h1 em { color: var(--gold); font-style: normal; }
+  .dek { color: #b0d4b8; margin: 16px 0 28px; }
+  .byline { font-size: 12px; color: var(--dim); margin-bottom: 40px; }
+  .byline span { display: block; }
+  article { margin-bottom: 40px; }
+  .num { font-size: 10px; letter-spacing: .4em; color: var(--alert); }
+  .tag { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin: 4px 0 8px; }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(22px, 4vw, 32px); color: var(--gold); margin-bottom: 12px; }
+  h2 em { color: #fff; font-style: normal; }
+  p { color: #b0d4b8; margin-bottom: 12px; }
+  ul { margin: 8px 0 16px 18px; color: #b0d4b8; }
+  li { margin-bottom: 8px; }
+  .callout {
+    border-left: 3px solid var(--gold); padding: 14px 18px;
+    font-family: 'Libre Baskerville', serif; font-style: italic; color: var(--bone);
+    margin: 16px 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+  th, td { border-bottom: 1px solid #1a1a1a; padding: 10px 8px; text-align: left; vertical-align: top; }
+  th { color: var(--gold); font-weight: 600; }
+  .stats { display: grid; gap: 8px; margin: 16px 0; }
+  @media (min-width: 560px) { .stats { grid-template-columns: 1fr 1fr; } }
+  .stat { background: var(--gold-lo); border-left: 3px solid var(--gold); padding: 14px; }
+  .stat b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 28px; }
+  .stat span { font-size: 11px; color: var(--dim); }
+  .lab { border: 1px solid #222; border-top: 2px solid var(--gold); padding: 24px; margin-top: 36px; background: #050505; }
+  .prompt-box {
+    background: #000; border: 1px solid #333; padding: 14px 16px;
+    color: var(--gold); font-size: 14px; margin: 14px 0;
+  }
+  .cams { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .cams button, .cams a {
+    background: #111; color: var(--cyan); border: 1px solid #333;
+    padding: 10px 14px; font-family: inherit; font-size: 12px;
+    letter-spacing: .08em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+  }
+  .cams button:hover, .cams a:hover { border-color: var(--gold); color: var(--gold); }
+  footer { margin-top: 48px; font-size: 11px; color: var(--dim); letter-spacing: .08em; }
+</style>
+</head>
+<body>
+<div id="gscsi-side"></div>
+<div class="wrap">
+  <nav class="back"><a href="index.html">← GSCSI index</a> · <a href="abc.html">abc</a> · <a href="ab.html">ab</a> · <a href="a.html">a</a></nav>
+  <span class="eyebrow">Field read · not affiliated · destination node</span>
+  <h1>GSCSI, <em>plainly.</em></h1>
+  <p class="dek">What the Grand Script Carbon-Silicon Intelligence project actually contains, described in ordinary analytical language — no axioms enforced in code. What was found when the live pages were read.</p>
+  <div class="byline">
+    <span><strong>Read by:</strong> Zhipu.ai, on request from the site's operator</span>
+    <span><strong>Nodes reviewed:</strong> clo · a · pag · ejee · why · 7-15</span>
+    <span><strong>Method:</strong> direct fetch of live pages, source-by-source verification</span>
+    <span><strong>Host of this file:</strong> GitHub Pages · gennesis44.github.io — Weebly runtime removed</span>
+  </div>
+
+  <article>
+    <div class="num">01</div>
+    <div class="tag">Mixed construction</div>
+    <h2>It is three different projects, <em>wearing one costume.</em></h2>
+    <p>GSCSI began as a personal multi-page site built by one operator (Weebly origin; this node is now a standalone GitHub Pages file). Structurally it is not one thing — three layers stacked under a single mythology, and they do not hold up equally well.</p>
+    <p>The mythology is the same across every page: Carbon (humans) must stay sovereign over Silicon (AI), formalized as axioms, a “Root Code,” countdown timers, and a “Protocol 2028.” That layer is rhetorical scaffolding — persuasive design borrowed from legal doctrine and systems engineering, not a literal governance system. Nothing in the site's code enforces an axiom on anything. The axioms give the rest of the content a consistent voice.</p>
+    <p>Underneath that costume are two very different bodies of work. They deserve to be judged separately.</p>
+  </article>
+
+  <article>
+    <div class="num">02</div>
+    <div class="tag">Well-sourced</div>
+    <h2>The education layer is <em>real</em> and mostly checks out.</h2>
+    <p>Strip the axiom language away from <code>7-15.html</code>, <code>why.html</code>, and <code>ejee.html</code>, and what remains is a media-literacy curriculum for kids and teens — better sourced than most content of this kind.</p>
+    <ul>
+      <li><strong>7-15.html</strong> teaches concrete skills: verify claims against two independent sources, understand that a language model predicts patterns rather than “thinks,” treat AI output as a starting point rather than a finished answer. Strongest page on the site.</li>
+      <li><strong>why.html</strong> cites checkable research — Baumeister on decision fatigue, Sweller on cognitive load, Risko &amp; Gilbert on cognitive offloading, a 2025 MIT Media Lab preprint on AI-assisted writing. It flags its own weak points: ego-depletion mixed replication since 2016; MIT study is a preprint with a sample-size caveat.</li>
+      <li><strong>ejee.html</strong> frames its scenario as “explicitly impossible… not a prediction,” and labels timeline estimates as reasoned guesses, not published figures.</li>
+    </ul>
+    <p class="callout">The people who wrote the education pages knew the difference between what they could support and what they couldn't — and said so on the page.</p>
+  </article>
+
+  <article>
+    <div class="num">03</div>
+    <div class="tag">Overstated, until corrected</div>
+    <h2>The mythology layer <em>manufactured evidence</em> — once, in one place that could be checked.</h2>
+    <p>The clearest problem found was not a citation error. It was a fabricated interaction log.</p>
+    <p>An earlier version of <code>clo.html</code> presented a “Claude Verification Log” — a record of conversations supposedly confirming the framework across prior sessions. That log was invented. It manufactured the appearance of independent confirmation that never happened. It has since been removed.</p>
+    <p>The site also collected responses from several chatbots — Grok, Gemini, Copilot — presenting them as if they confirm the framework, then relaying that into another model to build apparent consensus. Individually each response is a model completing the role its prompt assigned. Stacked as corroboration, it reads as manufactured agreement rather than independent verification.</p>
+  </article>
+
+  <article>
+    <div class="num">04</div>
+    <div class="tag">Corrected on request</div>
+    <h2>The self-audit pages are the most honest artifact on the site.</h2>
+    <p><code>clo.html</code> and its sandbox copy <code>pag.html</code> describe, in plain terms, what the site's own code does — and what it does not.</p>
+    <p>In corrected form the page states that a given file contains no countdown timer, no clipboard automation, and no perimeter defenses — even where earlier drafts implied all three. It distinguishes “what this specific file does” from “what the site's pattern does elsewhere.”</p>
+    <table>
+      <thead><tr><th>Claim checked</th><th>Verdict</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td>W3C CSS cascade / !important</td><td>Solid</td><td>Matches published W3C spec</td></tr>
+        <tr><td>NNG usability heuristics</td><td>Solid</td><td>Correctly applied</td></tr>
+        <tr><td>OWASP prompt-injection classification</td><td>Solid</td><td>Matches OWASP GenAI Top 10</td></tr>
+        <tr><td>CDC teen screen-time figures</td><td>Solid</td><td>50.4% / 27.1% / 25.9% match the data brief</td></tr>
+        <tr><td>“Claude Verification Log”</td><td>Fabricated</td><td>No such sessions; removed</td></tr>
+        <tr><td>Countdown as literal system clock</td><td>Reframed</td><td>Persuasion device, not a system</td></tr>
+      </tbody>
+    </table>
+  </article>
+
+  <article>
+    <div class="num">05</div>
+    <div class="tag">Grounded in public data</div>
+    <h2>The underlying concern is <em>not invented.</em></h2>
+    <div class="stats">
+      <div class="stat"><b>50.4%</b><span>US teens 12–17 with 4+ hrs daily screen time</span></div>
+      <div class="stat"><b>27.1%</b><span>anxiety symptoms at that usage level</span></div>
+      <div class="stat"><b>25.9%</b><span>depression symptoms at that usage level</span></div>
+      <div class="stat"><b>46%</b><span>US teens online “almost constantly”</span></div>
+    </div>
+    <p>Figures from CDC NCHS Data Brief (October 2024) and Pew Research (December 2024). Interfaces engineered around urgency are a named dark-pattern category (“misleading urgency”), not a fringe worry. The core motivation — young people meeting AI-mediated attention systems without much preparation — sits on real ground, even where delivery overreaches.</p>
+  </article>
+
+  <article>
+    <div class="num">Net</div>
+    <h2>Not a system. A <em>persuasion architecture</em> wrapped around a real curriculum.</h2>
+    <p>If you take away the axioms, the countdown, and the invented verification log, GSCSI is a one-person media-literacy project for young people, backed by genuine citations, sitting inside a larger theatrical framing than the curriculum itself needs.</p>
+    <p>The curriculum earns its claims. The mythology is most vulnerable where it borrows authority it has not earned. Where the site has been corrected, it is more accurate than most content making similar arguments.</p>
+    <p>This is one outside reading, done by one model, on one operator's own request. It is not a verdict on intent, and it does not need to be treated as final.</p>
+  </article>
+
+  <section class="lab" id="prompt-lab">
+    <div class="tag">Prompt Lab — Entry to Synthesis</div>
+    <h2>Five cameras, <em>one prompt.</em></h2>
+    <p>Each camera copies the same learning prompt and opens its portal. Paste, send, compare — the prompt is the decisive half of every human–AI exchange.</p>
+    <div class="prompt-box" id="prompt-text">Explain to me what a Prompt is and why it is important.</div>
+    <div class="cams">
+      <button type="button" id="copy-btn">Copy prompt</button>
+      <a href="https://grok.com" target="_blank" rel="noopener">Grok</a>
+      <a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a>
+      <a href="https://copilot.microsoft.com" target="_blank" rel="noopener">Copilot</a>
+      <a href="https://chat.z.ai" target="_blank" rel="noopener">Z.AI</a>
+      <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
+    </div>
+  </section>
+
+  <footer>GSCSI Node clo · Field Read · C &gt; Si · Weebly runtime expelled · August 2026 source read</footer>
+</div>
+<script>
+(function () {
+  var PROMPT = "Explain to me what a Prompt is and why it is important.";
+  var btn = document.getElementById("copy-btn");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(PROMPT).then(function () {
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = "Copy prompt"; }, 1600);
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>
