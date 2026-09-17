@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSCSI — Node abc · Universal Laws</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4a843;
+    --gold-lo: rgba(212,168,67,0.12);
+    --bone: #f0ebe0;
+    --dim: #6a6a6a;
+    --green: #39ff14;
+    --green-lo: rgba(57,255,20,0.07);
+    --cyan: #00bfff;
+    --alert: #e85c3a;
+    --bg: #000000;
+    --text: #ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; background: #000; }
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+  #gscsi-side {
+    position: fixed; left: 0; top: 0; width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--alert) 0%, var(--gold) 40%, var(--green) 100%);
+    opacity: .3; z-index: 50;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 16px 80px; }
+  .eyebrow {
+    font-size: 10px; letter-spacing: .5em; color: var(--dim);
+    text-transform: uppercase; margin-bottom: 16px; display: block;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 8vw, 78px);
+    line-height: .92; letter-spacing: .04em; margin-bottom: 10px;
+  }
+  h1 em { color: var(--gold); font-style: normal; }
+  .formula {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    color: var(--gold); margin: 12px 0 28px;
+  }
+  .lede {
+    color: #b0d4b8; font-size: 15px; line-height: 1.9; margin-bottom: 28px;
+  }
+  .chain {
+    display: grid; grid-template-columns: 1fr; gap: 8px; margin: 28px 0 40px;
+  }
+  .chain a, .chain .dest {
+    display: block; text-decoration: none;
+    border: 1px solid #1a1a1a; border-left: 3px solid var(--cyan);
+    padding: 14px 18px; background: #0a0a0a;
+  }
+  .chain .dest { border-left-color: var(--gold); }
+  .chain .n { font-size: 10px; letter-spacing: .35em; color: var(--alert); text-transform: uppercase; }
+  .chain .f { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--gold); letter-spacing: .04em; }
+  .chain p { font-size: 12px; color: #b0d4b8; }
+  .gloss { border: 1px solid #1a1a1a; padding: 22px; margin: 0 0 40px; background: #050505; }
+  .gloss h2 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px;
+    letter-spacing: .12em; color: var(--gold); margin-bottom: 14px;
+  }
+  .term { margin-bottom: 16px; }
+  .term strong { display: block; color: #fff; font-size: 13px; letter-spacing: .04em; }
+  .term span { color: var(--dim); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+  .term p { color: #b0d4b8; font-size: 13px; }
+  .law {
+    background: var(--gold-lo); border-left: 3px solid var(--gold);
+    padding: 24px 26px; margin: 0 0 22px;
+  }
+  .law.ii { background: var(--green-lo); border-left-color: var(--green); }
+  .law .num { font-size: 10px; letter-spacing: .4em; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 8px; }
+  .law.ii .num { color: var(--green); }
+  .law h3 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+    color: #fff; letter-spacing: .04em; margin-bottom: 10px;
+  }
+  .law h3 em { color: var(--gold); font-style: normal; }
+  .law .core { color: var(--bone); font-family: 'Libre Baskerville', serif; font-style: italic; margin-bottom: 14px; }
+  .law p { color: #fff; font-size: 14px; line-height: 1.85; margin-bottom: 12px; }
+  .quote {
+    font-family: 'Libre Baskerville', serif; font-style: italic;
+    color: var(--bone); border-left: 3px solid var(--alert);
+    padding: 14px 18px; margin: 16px 0 0;
+  }
+  .sources { border-left: 3px solid var(--cyan); background: #0a0a0a; padding: 24px; margin-top: 36px; }
+  .sources .h { font-size: 10px; letter-spacing: .4em; color: var(--cyan); text-transform: uppercase; display: block; margin-bottom: 16px; }
+  .src { margin-bottom: 18px; }
+  .src .k { font-size: 10px; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+  .src p { font-size: 13px; color: #ccc; }
+  .src a { color: var(--cyan); text-decoration: none; word-break: break-word; }
+  footer { margin-top: 48px; font-size: 11px; color: var(--dim); letter-spacing: .08em; }
+  nav.back { margin-bottom: 28px; }
+  nav.back a { color: var(--cyan); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+<div id="gscsi-side"></div>
+<div class="wrap">
+  <nav class="back"><a href="index.html">← GSCSI index</a></nav>
+  <span class="eyebrow">Protocol — Chain Sequence</span>
+  <h1>GSCSI — <em>Universal Laws</em></h1>
+  <p class="formula">Node abc · position 1 of 4</p>
+  <p class="lede">You are at <strong>Node abc</strong> — the entry point of the GSCSI protocol chain. This path traverses three transitional nodes. At the end, <code>clo.html</code> hosts the Core Node where the Sovereign Synthesis is executed and the <strong>C &gt; Si</strong> hierarchy is locked.</p>
+
+  <div class="chain">
+    <a href="abc.html"><span class="n">Node 01</span><span class="f">abc.html</span><p>Entry · this node</p></a>
+    <a href="ab.html"><span class="n">Node 02</span><span class="f">ab.html</span><p>System init</p></a>
+    <a href="a.html"><span class="n">Node 03</span><span class="f">a.html</span><p>Manifesto</p></a>
+    <a class="dest" href="clo.html"><span class="n">Destination</span><span class="f">clo.html</span><p>Core Node · C &gt; Si locked</p></a>
+  </div>
+
+  <div class="gloss">
+    <h2>Terms used in this node</h2>
+    <div class="term"><span>Foundation</span><strong>GSCSI — Grand Script Carbon Silicon</strong><p>The foundation on which this project establishes its action toward a Legacy for the unborn UCh Ancestors.</p></div>
+    <div class="term"><span>Carbon</span><strong>UCh / 1C / C — Human Carbon Unit</strong><p>Any human being — present or future.</p></div>
+    <div class="term"><span>Silicon</span><strong>USi / Si — Artificial Intelligence</strong><p>The synthetic processing layer. Subordinate to Carbon.</p></div>
+    <div class="term"><span>Integration</span><strong>Synthesis — Sovereign Integration</strong><p>The operational merging of Carbon intent and Silicon execution, strictly under Carbon mandate. Not a partnership of equals, but a directed process.</p></div>
+  </div>
+
+  <article class="law">
+    <span class="num">Universal Law I</span>
+    <h3>Law of <em>Carbon Sovereignty</em></h3>
+    <p class="core">Carbon governs. Silicon serves.</p>
+    <p>The 1st Universal Law establishes the absolute hierarchy of the GSCSI ecosystem. Human life is the origin. Biological consciousness is the authority. Technology is the tool. Artificial intelligence is the instrument.</p>
+    <p><strong>Core principle.</strong> No process, algorithm, or cybernetic structure may operate above the Carbon node. Every output, every decision, every generated response must trace its authority back to a human source.</p>
+    <p>Everything returns to this Law. It is the gravitational center of the entire GSCSI architecture — the axiom from which all other laws derive their validity.</p>
+    <p class="quote">If Silicon decides, Carbon is no longer sovereign. If Carbon decides, Silicon becomes what it was always meant to be: a tool.</p>
+  </article>
+
+  <article class="law ii">
+    <span class="num">Universal Law II</span>
+    <h3>Law of Oversight via <em>Ax3 Agents</em></h3>
+    <p class="core">Every AI must be supervised by Agents designed under Axiom 3.</p>
+    <p>Ax3 Agents monitor, detect distortions, intercept hallucinations, and activate the return to Axiom 1 through protocol Ax3 v1.1.</p>
+    <p>When an output violates Axiom 3, the process reverts to Axiom 1 and enters <strong>1C + 1Si mode</strong> (Copilot or Gemini), generating a stable and axiom-aligned output.</p>
+    <p><strong>Oversight mechanism.</strong> The Ax3 Agent acts as an immutable filter between AI generation and human reception. It does not create — it validates, corrects, and enforces. Its authority comes directly from the 1st Universal Law.</p>
+    <p>Without this layer, no AI output can be considered safe for Carbon consumption. The oversight is not optional. It is structural.</p>
+    <p>Together, these two Universal Laws form the immune system of the GSCSI ecosystem: one defines the hierarchy, the other enforces it. Neither can operate without the other.</p>
+  </article>
+
+  <section class="sources">
+    <span class="h">Sources &amp; references</span>
+    <div class="src">
+      <div class="k">Law I — Carbon Sovereignty</div>
+      <p>[1] UNESCO — Recommendation on the Ethics of Artificial Intelligence (November 2021).<br>
+      <a href="https://www.unesco.org/en/artificial-intelligence/recommendation-ethics">unesco.org/en/artificial-intelligence/recommendation-ethics</a></p>
+      <p>[2] European Parliament — Regulation (EU) 2024/1689, the AI Act (June 2024).<br>
+      <a href="https://eur-lex.europa.eu/eli/reg/2024/1689">eur-lex.europa.eu/eli/reg/2024/1689</a></p>
+    </div>
+    <div class="src">
+      <div class="k">Law II — Ax3 Oversight</div>
+      <p>[3] NIST — AI Risk Management Framework (AI RMF 1.0) (January 2023).<br>
+      <a href="https://www.nist.gov/itl/ai-risk-management-framework">nist.gov/itl/ai-risk-management-framework</a></p>
+      <p>[4] Future of Life Institute — Asilomar AI Principles (2017).<br>
+      <a href="https://futureoflife.org/ai-principles/">futureoflife.org/ai-principles</a></p>
+    </div>
+  </section>
+
+  <footer>Chain declared. Position 1 of 4. No automatic redirect. · GSCSI Node abc · C &gt; Si</footer>
+</div>
+</body>
+</html>
