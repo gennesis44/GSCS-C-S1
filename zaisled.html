@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSCSI — SLED Node Zero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4a843;
+    --bone: #f0ebe0;
+    --dim: #6a6a6a;
+    --green: #39ff14;
+    --cyan: #00bfff;
+    --alert: #e85c3a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #000; }
+  body {
+    background: #000; color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px; line-height: 1.85;
+  }
+  #gscsi-side {
+    position: fixed; left: 0; top: 0; width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--alert), var(--gold), var(--green));
+    opacity: .3;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 16px 80px; }
+  nav.back { margin-bottom: 28px; }
+  nav.back a { color: var(--cyan); text-decoration: none; font-size: 12px; }
+  .eyebrow { font-size: 10px; letter-spacing: .5em; color: var(--dim); text-transform: uppercase; display: block; margin-bottom: 14px; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 7vw, 68px); line-height: .92; }
+  h1 em { color: var(--gold); font-style: normal; }
+  section { margin-bottom: 40px; }
+  .n { font-size: 10px; letter-spacing: .4em; color: var(--alert); text-transform: uppercase; }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(22px, 4vw, 32px); color: var(--gold); margin: 6px 0 14px; border-bottom: 1px solid #222; padding-bottom: 8px; }
+  h2 em { color: #fff; font-style: normal; }
+  h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--gold); margin: 8px 0 12px; }
+  p { color: #b0d4b8; margin-bottom: 10px; }
+  .quote {
+    font-family: 'Libre Baskerville', serif; font-style: italic; color: var(--bone);
+    border-left: 3px solid var(--gold); padding: 16px 20px; margin: 16px 0;
+  }
+  .pillar { background: #0a0a0a; border-left: 3px solid var(--green); padding: 18px 20px; margin: 16px 0; }
+  .duo { font-size: 13px; color: #ccc; }
+  .duo strong { color: var(--gold); }
+  .src { font-size: 13px; color: #999; margin-bottom: 10px; }
+  footer { margin-top: 48px; font-size: 11px; color: var(--dim); }
+</style>
+</head>
+<body>
+<div id="gscsi-side"></div>
+<div class="wrap">
+  <nav class="back"><a href="index.html">← GSCSI index</a> · <a href="sal.html">S</a> · <a href="lim.html">L</a> · <a href="eduu.html">E</a> · <a href="dic.html">D</a> · <a href="why.html">why</a></nav>
+  <span class="eyebrow">SLED — Node Zero</span>
+  <h1>SLED <em>Map</em></h1>
+
+  <section>
+    <span class="n">Node Zero — Preamble</span>
+    <h2>The <em>Preamble</em></h2>
+    <p class="quote">The mind is not a vessel to be filled with external noise, but a processor to be calibrated. Only in the silence of absolute cognitive clearance does the true signal emerge from the chaotic architecture of the modern environment.</p>
+    <p><strong>Diagnosis:</strong> The biological substrate (Carbon Unit) is under structural failure. This is the Inflection Point.</p>
+    <p><strong>Mandate:</strong> Cognitive sovereignty requires clearance. We define the internal architecture.</p>
+    <p><strong>Temporal Anchor:</strong> 7–15 cycle. Recovery is a structural requirement.</p>
+    <p><strong>Imperative:</strong> Carbon priority. Sovereignty via SLED. Earth Shield objective.</p>
+  </section>
+
+  <section>
+    <span class="n">Stone I — Protocol Nodes</span>
+    <h2>The <em>SLED</em> Matrix</h2>
+    <p>Four nodes. Each one a structural requirement of the Carbon Unit. Together, the operational baseline. Every node carries a dual purpose: what it does for the human operator (1C — Carbon), and how it improves the quality of work done with AI systems (Si — Silicon).</p>
+
+    <div class="pillar">
+      <h3>S · ALUD</h3>
+      <p><strong>Nutrition:</strong> Consistent, varied intake to sustain energy and avoid the attention and mood effects associated with poor diet.</p>
+      <p><strong>Sleep &amp; Circadian Rhythm:</strong> Regular sleep and wake times, aligned with light exposure, to support the body's internal clock and downstream hormonal and cognitive function.</p>
+      <p><strong>Movement &amp; Structure:</strong> Regular physical activity, combining resistance and cardiovascular work with joint mobility, to maintain physical capacity and reduce stress load.</p>
+      <p><strong>Hydration:</strong> Adequate fluid intake, since water supports nutrient transport and the chemical processes that sustain normal bodily function.</p>
+      <p><strong>Recovery &amp; Gut-Brain Axis:</strong> Managing stress and rest cycles, given the documented interaction between sleep quality, gut microbiota balance, and mood regulation.</p>
+      <p class="duo"><strong>1C (Carbon):</strong> Sustains the physical and cognitive capacity required to work, decide, and keep the project running over months, not just days.</p>
+      <p class="duo"><strong>Si (Silicon):</strong> A rested, regulated operator gives clearer instructions and more consistent feedback, which directly improves the quality of AI-assisted output.</p>
+    </div>
+
+    <div class="pillar">
+      <h3>L · IMPIEZA</h3>
+      <p><strong>Digital Hygiene:</strong> Periodic review of information intake: unsubscribing from low-value sources and limiting exposure to content that consumes attention without adding value.</p>
+      <p><strong>Algorithmic Noise Filtering:</strong> Recognizing recommendation systems designed to maximize engagement rather than usefulness, and deliberately disabling or ignoring feeds that don't serve a stated purpose.</p>
+      <p class="duo"><strong>1C (Carbon):</strong> Frees attention from low-value input, leaving more mental bandwidth for the work that actually matters.</p>
+      <p class="duo"><strong>Si (Silicon):</strong> Lower noise in what gets fed to AI systems — clearer prompts, less contradictory context — produces more accurate and useful responses.</p>
+    </div>
+
+    <div class="pillar">
+      <h3>E · DUCATION</h3>
+      <p><strong>Cognitive Load Management:</strong> Prioritizing high-value information and limiting simultaneous demands on attention, to reduce decision fatigue over the course of a working day.</p>
+      <p><strong>Continuous Review:</strong> Periodically revisiting and adjusting personal routines based on what has and hasn't worked, rather than treating the framework as fixed.</p>
+      <p><strong>Algorithmic Literacy:</strong> Building a working understanding of how the AI systems and platforms used daily actually function, so they are used deliberately rather than relied on uncritically.</p>
+      <p class="duo"><strong>1C (Carbon):</strong> Builds independent judgment, reducing reliance on any single source of information — human or artificial.</p>
+      <p class="duo"><strong>Si (Silicon):</strong> Understanding a system's limits and typical failure modes allows its output to be verified rather than trusted by default.</p>
+    </div>
+
+    <div class="pillar">
+      <h3>D · ISCIPLINE</h3>
+      <p><strong>Interaction Limits with AI Systems:</strong> Setting defined time windows for using AI tools and devices, so their use is a deliberate choice rather than a default state.</p>
+      <p><strong>Scheduled Disconnection:</strong> Fixed daily periods away from screens and digital assistants, used as a regular practice rather than an occasional exception.</p>
+      <p class="duo"><strong>1C (Carbon):</strong> Protects time and attention as finite resources, preventing any single activity — including AI use — from displacing rest, health, or relationships.</p>
+      <p class="duo"><strong>Si (Silicon):</strong> Defined usage windows keep AI tools functioning as instruments for specific tasks, rather than becoming a default, always-on decision-maker.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="n">Stone II — References</span>
+    <h2>Supporting <em>Sources</em></h2>
+    <p>Listed only where a Health objective rests on an established physiological relationship. General habits (digital hygiene, review cycles, disconnection) are practical choices, not tied to a specific study.</p>
+    <p class="src">[1] Yashoda Hospitals — “4 pillars of brain health: sleep, nutrition, activity and lifestyle.”</p>
+    <p class="src">[2] Madrid, J.A. (Cronolab, University of Murcia), interviewed in Kurasana — “The 4 pillars of circadian health.”</p>
+    <p class="src">[3] Aetna — “Ways to achieve total body health, the four pillars.”</p>
+    <p class="src">[4] Gaceta CCH-UNAM — “The 5 pillars of good health.”</p>
+    <p class="src">[5] Enders, G., cited in Infobae — on the sleep–gut microbiota–mood relationship.</p>
+    <p class="src">[6] La Web de la Salud — on hydration's physiological role.</p>
+  </section>
+
+  <footer>GSCSI Node zaisled · SLED Map · Weebly runtime expelled</footer>
+</div>
+</body>
+</html>
