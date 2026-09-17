@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSCSI — Manifesto Technical</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --carbon: #0a0a0a;
+    --carbon-mid: #1a1a1a;
+    --carbon-light: #2e2e2e;
+    --silicon-dim: #5bb8d4;
+    --gold: #d4a843;
+    --gold-dim: #8a6a20;
+    --bone: #f0ebe0;
+    --alert: #e85c3a;
+    --reading-green: #b0d4b8;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; background: #000; }
+  body {
+    background: #000; color: var(--reading-green);
+    font-family: 'Libre Baskerville', Georgia, serif; font-size: 17px; line-height: 1.75;
+  }
+  .txt-reading { color: var(--reading-green); margin-bottom: 18px; max-width: 680px; }
+  .txt-reading strong { color: var(--bone); }
+  .list-container { margin: 24px 0; max-width: 680px; }
+  .list-item-div {
+    color: var(--reading-green); padding: 10px 0 10px 28px;
+    border-bottom: 1px solid var(--carbon-light); position: relative;
+  }
+  .list-item-div::before { content: '→'; position: absolute; left: 0; color: var(--alert); font-family: 'IBM Plex Mono', monospace; }
+  .list-item-div:last-child { border-bottom: none; }
+  .list-item-div strong { color: var(--bone); }
+  .side-nav {
+    position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 100;
+    display: flex; flex-direction: column; gap: 6px; padding-left: 18px;
+  }
+  .nav-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--carbon-light);
+    border: 1px solid #a8d5b5; text-decoration: none; display: block;
+  }
+  .nav-dot.active, .nav-dot:hover { background: var(--gold); border-color: var(--gold); }
+  .global-header {
+    text-align: center; padding: 80px 20px 40px; border-bottom: 1px solid var(--carbon-light);
+    position: relative;
+  }
+  .global-header::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--alert), var(--gold), #c8f0ff);
+  }
+  .logo-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.4em;
+    color: var(--silicon-dim); text-transform: uppercase; margin-bottom: 18px; display: block;
+  }
+  .main-title {
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(42px, 8vw, 90px);
+    line-height: 0.9; color: var(--bone); margin-bottom: 20px;
+  }
+  .main-title span { color: var(--gold); display: block; }
+  .global-subtitle {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.2em;
+    color: var(--reading-green); max-width: 600px; margin: 0 auto; line-height: 1.6;
+  }
+  section { max-width: 820px; margin: 0 auto; padding: 80px 40px; }
+  section + section { border-top: 1px solid var(--carbon-light); }
+  .stone-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.4em;
+    color: var(--silicon-dim); text-transform: uppercase; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .stone-label::after { content: ''; flex: 1; height: 1px; background: var(--carbon-light); max-width: 120px; }
+  h2 {
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 6vw, 62px);
+    line-height: 1; color: var(--bone); margin-bottom: 32px;
+  }
+  h2 em { color: var(--gold); font-style: normal; }
+  .declaration-block {
+    font-family: 'Libre Baskerville', serif; font-style: italic;
+    font-size: clamp(18px, 2.5vw, 22px); color: var(--bone);
+    border-left: 3px solid var(--gold); padding-left: 28px; margin: 36px 0;
+  }
+  .alert-block {
+    background: rgba(232, 92, 58, 0.08); border-left: 3px solid var(--alert);
+    padding: 24px 28px; margin: 32px 0;
+  }
+  .code-snippet {
+    background: var(--carbon-mid); border: 1px solid var(--carbon-light);
+    padding: 20px 24px; font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px; color: var(--silicon-dim); margin: 24px 0; overflow-x: auto;
+  }
+  .cta-button {
+    display: inline-block; margin-top: 40px; padding: 18px 48px;
+    background: var(--gold); color: #000;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px;
+    letter-spacing: 0.15em; text-decoration: none; text-transform: uppercase;
+  }
+  .sources-section { max-width: 820px; margin: 0 auto; padding: 60px 40px 80px; border-top: 1px solid var(--carbon-light); }
+  .sources-heading { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.4em; color: var(--silicon-dim); text-transform: uppercase; margin-bottom: 28px; }
+  .sources-category { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin: 24px 0 8px; display: block; }
+  .source-entry { margin-bottom: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.9; }
+  .source-entry strong { color: var(--bone); }
+  .source-entry a { color: var(--silicon-dim); text-decoration: none; word-break: break-word; }
+  .sources-timestamp { display: block; margin-top: 32px; font-size: 11px; color: var(--silicon-dim); }
+  .site-footer {
+    border-top: 1px solid var(--carbon-light); padding: 24px 40px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--reading-green);
+    max-width: 820px; margin: 0 auto;
+  }
+  @media (max-width: 600px) {
+    section { padding: 60px 24px; }
+    .side-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<nav class="side-nav" aria-label="Section navigation">
+  <a href="#stone-1" class="nav-dot active" title="Hosting"></a>
+  <a href="#stone-2" class="nav-dot" title="UI/UX"></a>
+  <a href="#stone-3" class="nav-dot" title="Temporal Engine"></a>
+  <a href="#stone-4" class="nav-dot" title="Axioms"></a>
+  <a href="#stone-5" class="nav-dot" title="Injection"></a>
+  <a href="#stone-6" class="nav-dot" title="Conclusion"></a>
+</nav>
+
+<header class="global-header">
+  <div class="logo-label">GSCSI :: Technical Self-Audit</div>
+  <h1 class="main-title">MANIFESTO<span>TECHNICAL</span></h1>
+  <div class="global-subtitle">
+    Operator (C): Fernando<br>
+    Vector: Architecture extraction, visual layer demystification, state mapping.<br>
+    Restriction (C &gt; Si): Zero system fiction. Zero roleplay. Only structural analysis.<br>
+    Scope note: This document describes this file's own code where noted, and the general pattern used elsewhere on the site where explicitly flagged as such.
+  </div>
+</header>
+
+<section id="stone-1">
+  <div class="stone-label">Layer I — Hosting</div>
+  <h2>STRUCTURAL <em>PARASITISM</em></h2>
+  <p class="txt-reading">The original payload was injected into a proprietary CMS (Weebly). This GitHub Pages file is the extracted node: no host footer to hide, no <code>killWeebly()</code> routine.</p>
+  <div class="list-container">
+    <div class="list-item-div"><strong>Then:</strong> CSS <code>!important</code> and a MutationObserver hid <code>.wsite-footer</code> in the browser. Client-side DOM only — it never touched Weebly's server.</div>
+    <div class="list-item-div"><strong>Now:</strong> Standalone HTML on GitHub Pages. No CMS chrome. The audit below remains, because the pattern still describes how the site was built.</div>
+  </div>
+</section>
+
+<section id="stone-2">
+  <div class="stone-label">Layer II — UI/UX</div>
+  <h2>COGNITIVE <em>STIMULATION</em></h2>
+  <p class="txt-reading">The “terminal / technical dossier” aesthetic is psychological anchoring, not a running system.</p>
+  <div class="list-container">
+    <div class="list-item-div"><strong>Typography:</strong> Bebas Neue, Libre Baskerville, IBM Plex Mono — printed-report pairing, not a console.</div>
+    <div class="list-item-div"><strong>Chromatic:</strong> High contrast on black. Gold for structure; alert red for warning blocks.</div>
+    <div class="list-item-div"><strong>Motion:</strong> This file has no looping I/O animation. Static document.</div>
+  </div>
+</section>
+
+<section id="stone-3">
+  <div class="stone-label">Layer III — Site Pattern (not present in this file)</div>
+  <h2>THE TEMPORAL <em>ENGINE</em></h2>
+  <p class="txt-reading">This file contains no countdown and no <code>setInterval</code>. The following describes a pattern used on other historical nodes, for context.</p>
+  <div class="list-container">
+    <div class="list-item-div"><strong>Mechanism (elsewhere):</strong> Delta between <code>Date.now()</code> and a hardcoded timestamp, refreshed every 1000 ms.</div>
+    <div class="list-item-div"><strong>Degradation (elsewhere):</strong> Below a threshold, bar color and warning styles mutate.</div>
+  </div>
+  <div class="alert-block">
+    <p class="txt-reading">Where it existed, it was not a “singularity clock”. It was a <strong>cognitive urgency timer</strong>. This file does not implement that mechanism.</p>
+  </div>
+</section>
+
+<section id="stone-4">
+  <div class="stone-label">Layer IV — Conceptual</div>
+  <h2>STATE VS. <em>REALITY</em></h2>
+  <p class="txt-reading">The framework is referenced in text. In this environment the axioms are not executable law:</p>
+  <p class="txt-reading"><strong>Axiom 1 (C &gt; Si):</strong> No clipboard automation in this file. Reading and copying are ordinary browser actions.</p>
+  <p class="txt-reading"><strong>Axiom 2 (SLED):</strong> Not implemented here. On other nodes it is a task list in the DOM, with no backend check that the operator followed it.</p>
+  <p class="txt-reading"><strong>Axiom 3:</strong> Not implemented here. The only live script is the side-nav intersection observer.</p>
+</section>
+
+<section id="stone-5">
+  <div class="stone-label">Layer V — Site Pattern</div>
+  <h2>DEPLOYMENT AND <em>INJECTION</em></h2>
+  <p class="txt-reading">This file has one outbound action: a plain anchor.</p>
+  <div class="code-snippet">&lt;a href="abc.html" class="cta-button"&gt;Return to Node abc&lt;/a&gt;</div>
+  <p class="txt-reading">No clipboard write, no <code>window.open</code>, no auto-redirect. Clipboard-to-prompt buttons on other historical nodes primed a model's context window; they did not change model weights. This file does not do that.</p>
+  <div class="alert-block">
+    <p class="txt-reading">Where that pattern existed, it was <strong>context hijacking</strong> via prompt injection — manipulation of one session's context, not magic. This page only links to <code>abc.html</code>.</p>
+  </div>
+</section>
+
+<section id="stone-6">
+  <div class="stone-label">Layer VI — Perimeter</div>
+  <h2>PERIMETER <em>DEFENSE</em></h2>
+  <p class="txt-reading">This file implements no perimeter defense. No <code>contextmenu</code> block, no copy intercept, no <code>user-select: none</code>. Text can be selected normally.</p>
+  <p class="txt-reading">Where such measures existed elsewhere, they were client-side obscurity: F12 still reads the DOM.</p>
+  <div class="declaration-block">
+    “clo.html is not an operating system, nor a network node, nor an active security protocol. It is a context-injection interface device. Its technical genius does not reside in modifying AI, but in rigorously structuring the human operator's intention before they interact with AI.”
+  </div>
+  <p class="txt-reading" style="text-align:center;max-width:600px;margin:40px auto 0;">This file's actual function is narrower: a technical self-audit. Its one live action is a link to abc.html.</p>
+  <div style="text-align:center;">
+    <a href="abc.html" class="cta-button">Return to Node abc</a>
+  </div>
+</section>
+
+<section class="sources-section" id="sources">
+  <div class="sources-heading">Sources &amp; References</div>
+  <p class="txt-reading">Four sources, each tied to a claim.</p>
+  <span class="sources-category">Layer I — CSS cascade</span>
+  <div class="source-entry">[1] <strong>W3C — CSS Cascading and Inheritance Level 3</strong> (11 Feb 2021)<br>How <code>!important</code> wins the cascade — the old override against the CMS host.<br><a href="https://www.w3.org/TR/css-cascade-3/">w3.org/TR/css-cascade-3</a></div>
+  <span class="sources-category">Layer II — UI anchoring</span>
+  <div class="source-entry">[2] <strong>Nielsen Norman Group — 10 Usability Heuristics</strong> (Nielsen 1994; reviewed Jan 2024)<br>Visibility of system status; aesthetic and minimalist design.<br><a href="https://www.nngroup.com/articles/ten-usability-heuristics/">nngroup.com</a></div>
+  <span class="sources-category">Layer V — Prompt injection (site-wide pattern, not this file)</span>
+  <div class="source-entry">[3] <strong>OWASP GenAI Security Project — LLM Top 10</strong><br>Untrusted input in a context window can shift attention weights without changing model architecture.<br><a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/">genai.owasp.org</a></div>
+  <span class="sources-category">Context — attention / screen time</span>
+  <div class="source-entry">[4] <strong>CDC / NCHS Data Brief No. 513</strong> (Oct 2024)<br>Daily screen time among teenagers — backdrop for urgency-based interface design.<br><a href="https://www.cdc.gov/nchs/data/databriefs/db513.pdf">cdc.gov/nchs/data/databriefs/db513.pdf</a></div>
+  <span class="sources-timestamp">Last source verification: August 2026 · GSCSI Research Desk · Weebly runtime expelled</span>
+</section>
+
+<footer class="site-footer">GSCSI · impo.html · Technical Self-Audit · GitHub Pages</footer>
+
+<script>
+(function () {
+  var stones = document.querySelectorAll('section[id^="stone-"]');
+  var navDots = document.querySelectorAll('.nav-dot');
+  var scrollObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        navDots.forEach(function(dot){ dot.classList.remove('active'); });
+        var idx = Array.from(stones).indexOf(entry.target);
+        if (navDots[idx]) navDots[idx].classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+  stones.forEach(function(s){ scrollObserver.observe(s); });
+})();
+</script>
+</body>
+</html>
