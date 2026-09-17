@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- WEEBLY EARLY BLOCK — síncrono, antes de cualquier render -->
+<style id="weebly-preblock">
+  .powered-by-weebly, #footer-info, #footer-container,
+  .wsite-footer, .wsite-com-footer, .wsite-page-footer,
+  .wsite-below-footer, #wsite-footer-wrap, .wsite-footer-content,
+  a[href*="weebly.com"], img[src*="weebly"],
+  [class*="weebly-footer"], [id*="weebly-footer"],
+  [class*="powered-by"], [id*="powered-by"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: -99999px !important;
+    left: -99999px !important;
+    clip: rect(0,0,0,0) !important;
+  }
+</style>
+<script>
+(function(){
+  var s = document.createElement('style');
+  s.textContent = '.powered-by-weebly,#footer-info,#footer-container,.wsite-footer,.wsite-com-footer,.wsite-page-footer,.wsite-below-footer,#wsite-footer-wrap,.wsite-footer-content,a[href*="weebly.com"],img[src*="weebly"]{display:none!important;visibility:hidden!important;height:0!important;overflow:hidden!important;opacity:0!important;position:fixed!important;top:-99999px!important;}';
+  document.head.appendChild(s);
+})();
+</script>
+<style>
+  /* ─── ANTI-FLASH: oculta hasta que todo (incl. Weebly) haya cargado ─── */
+  html{opacity:0;transition:opacity .35s ease;}
+  html.gscsi-ready{opacity:1;}
+</style>
+<title>GSCSI — The Sovereign Synthesis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+
+  /* ─── WEEBLY KILL ─── */
+  .powered-by-weebly,#footer-info,#footer-container,.wsite-footer,
+  .wsite-com-footer,.wsite-page-footer,.wsite-below-footer,
+  #wsite-footer-wrap,.wsite-footer-content,[class*="powered-by"],
+  [id*="powered-by"],a[href*="weebly.com"],img[src*="weebly"],
+  [class*="weebly-footer"],[id*="weebly-footer"] {
+    display:none!important;visibility:hidden!important;height:0!important;
+    max-height:0!important;overflow:hidden!important;opacity:0!important;
+    pointer-events:none!important;position:absolute!important;top:-9999px!important;
+  }
+
+  :root {
+    --gold: #d4a843;
+    --gold-lo: rgba(212,168,67,0.12);
+    --bone: #f0ebe0;
+    --dim: #6a6a6a;
+    --green: #39ff14;
+    --green-lo:rgba(57,255,20,0.07);
+    --cyan: #00bfff;
+    --cyan-lo: rgba(0,191,255,0.08);
+    --alert: #e85c3a;
+    --bg: #000000;
+    --bg2: #0a0a0a;
+    --bg3: #111111;
+    --text: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; background:#000; }
+
+  body {
+    background:#000000!important;
+    color: #ffffff !important;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:16px;
+    line-height:1.85;
+    overflow-x:hidden;
+    user-select:text;
+  }
+
+  body,html,.wsite-content,.wsite-page-container,.wsite-background,
+  .wsite-page,.wsite-section,.wsite-section-content,
+  .wsite-block-content,#canvas,.container,
+  [id^="wsite"],[class^="wsite"] {
+    background-color:#000000!important;
+    background-image:none!important;
+  }
+
+  /* ─── PROGRESS BAR ─── */
+  #gscsi-progress-bar {
+    position:fixed;
+    top:0; left:0;
+    height:2px;
+    width:0%;
+    background:linear-gradient(90deg, var(--alert), var(--gold), var(--green));
+    z-index:1000;
+    transition:width 0.4s ease;
+    box-shadow:0 0 8px var(--gold);
+  }
+
+  /* ─── SIDE MARKER ─── */
+  #gscsi-side {
+    position:fixed;
+    left:0; top:0;
+    width:3px;
+    height:100%;
+    background:linear-gradient(180deg, var(--alert) 0%, var(--gold) 40%, var(--green) 100%);
+    opacity:0.3;
+    z-index:50;
+  }
+
+  /* ─── HEADER ─── */
+  .cyc-header {
+    text-align:center;
+    padding:70px 20px 50px;
+    border-bottom:1px solid #1a1a1a;
+    position:relative;
+    background:#000;
+  }
+  .cyc-header::after {
+    content:'';
+    position:absolute;
+    bottom:-1px; left:10%; right:10%;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+
+  .cyc-eyebrow {
+    font-size:10px;
+    letter-spacing:0.5em;
+    color:var(--dim) !important;
+    text-transform:uppercase;
+    margin-bottom:20px;
+    display:block;
+  }
+
+  .cyc-main-title {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(42px,8vw,90px);
+    line-height:0.92;
+    color:#ffffff !important;
+    letter-spacing:0.04em;
+    margin-bottom:16px;
+  }
+  .cyc-main-title em {
+    color:var(--gold) !important;
+    font-style:normal;
+    display:block;
+  }
+
+  .cyc-formula {
+    font-family:'Libre Baskerville',serif;
+    font-size:clamp(1.4rem,3.5vw,2.2rem);
+    color:var(--gold) !important;
+    margin:20px 0 12px;
+    letter-spacing:0.06em;
+    display:block;
+  }
+
+  .cyc-subtitle {
+    font-size:11px;
+    letter-spacing:0.25em;
+    color:#ffffff !important;
+    max-width:560px;
+    margin:0 auto;
+    display:block;
+  }
+
+  /* ─── MAIN CONTAINER ─── */
+  .cyc-body {
+    max-width:780px;
+    margin:0 auto;
+    padding:40px 16px 56px;
+  }
+
+  .cyc-body, .cyc-body * {
+    text-align:left !important;
+  }
+
+  /* ─── BLOCKS ─── */
+  .cyc-block {
+    opacity:0;
+    transform:translateY(12px);
+    transition:opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom:44px;
+  }
+  .cyc-block.visible {
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .cyc-section-label {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(22px,4vw,32px);
+    letter-spacing:0.08em;
+    color:var(--gold) !important;
+    margin-bottom:6px;
+    display:block;
+    border-bottom:1px solid #222;
+    padding-bottom:8px;
+  }
+  .cyc-section-num {
+    color:var(--alert) !important;
+    margin-right:8px;
+  }
+
+  .cyc-text {
+    color:#b0d4b8 !important;
+    font-size:15px;
+    line-height:1.9;
+    max-width:680px;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  .declaration-block {
+    font-family:'Libre Baskerville',serif;
+    font-style:italic;
+    font-size:clamp(15px,2.5vw,19px);
+    line-height:1.7;
+    color:var(--bone) !important;
+    border-left:3px solid var(--gold) !important;
+    padding:18px 24px;
+    margin:20px 0;
+  }
+
+  /* Axiom cards */
+  .axiom-card {
+    background:var(--gold-lo);
+    border-left:3px solid var(--gold);
+    padding:22px 26px;
+    margin:16px 0;
+    position:relative;
+  }
+  .axiom-card .axiom-num {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:11px;
+    letter-spacing:0.4em;
+    color:var(--gold) !important;
+    display:block;
+    margin-bottom:8px;
+  }
+  .axiom-card .axiom-title {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:20px;
+    color:#ffffff !important;
+    display:block;
+    margin-bottom:10px;
+    letter-spacing:0.05em;
+  }
+  .axiom-card p { color:#ffffff !important; font-size:14px; line-height:1.85; }
+
+  /* Phase cards */
+  .phase-card {
+    background:var(--green-lo);
+    border-left:3px solid var(--green);
+    padding:22px 26px;
+    margin:16px 0;
+  }
+  .phase-card .phase-label {
+    font-size:10px;
+    letter-spacing:0.4em;
+    color:var(--green) !important;
+    display:block;
+    margin-bottom:6px;
+    text-transform:uppercase;
+  }
+  .phase-card .phase-title {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:22px;
+    color:#ffffff !important;
+    display:block;
+    margin-bottom:8px;
+  }
+  .phase-card .phase-focus {
+    font-size:11px;
+    color:var(--dim) !important;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:10px;
+  }
+  .phase-card p { color:#ffffff !important; font-size:14px; line-height:1.85; }
+
+  /* Impl items */
+  .impl-item {
+    border-bottom:1px solid #1a1a1a;
+    padding:18px 0 18px 20px;
+    position:relative;
+  }
+  .impl-item::before {
+    content:'→';
+    position:absolute;
+    left:0;
+    color:var(--alert) !important;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .impl-item strong {
+    display:block;
+    color:#ffffff !important;
+    font-size:14px;
+    letter-spacing:0.08em;
+    margin-bottom:6px;
+    text-transform:uppercase;
+  }
+  .impl-item p { color:#ffffff !important; font-size:14px; line-height:1.8; }
+
+  /* Core logic */
+  .core-block {
+    background:#050505;
+    border:1px solid #222;
+    border-top:2px solid var(--gold);
+    padding:32px 28px;
+    margin-top:32px;
+    text-align:left;
+  }
+  .core-block .core-label {
+    font-size:10px;
+    letter-spacing:0.5em;
+    color:var(--dim) !important;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:16px;
+  }
+  .core-block p {
+    font-family:'Libre Baskerville',serif;
+    font-style:italic;
+    font-size:clamp(16px,2.5vw,19px);
+    color:#ffffff !important;
+    line-height:1.7;
+    max-width:600px;
+    margin:0;
+  }
+  .core-block p strong { color:var(--gold) !important; font-style:normal; }
+
+  /* Sources */
+  .sources-block {
+    background:#0a0a0a;
+    border:1px solid #1a1a1a;
+    border-left:3px solid var(--cyan);
+    padding:28px;
+    margin-top:20px;
+  }
+  .sources-block .src-heading {
+    font-size:10px;
+    letter-spacing:0.4em;
+    color:var(--cyan) !important;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:20px;
+  }
+  .src-pillar {
+    margin-bottom:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #1a1a1a;
+  }
+  .src-pillar:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .src-pillar .sp-label {
+    font-size:10px;
+    letter-spacing:0.3em;
+    color:var(--gold) !important;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:10px;
+  }
+  .src-pillar .sp-entry {
+    font-size:12px;
+    color:#ffffff !important;
+    line-height:1.8;
+    display:block;
+    text-decoration:none;
+  }
+  .sp-entry::before { content:'· '; color:var(--dim) !important; }
+  .sp-entry:hover { color:var(--cyan) !important; }
+
+  /* ─── SOVEREIGN PROMPT DIRECTIVE (injerto ptp) ─── */
+  .prompt-hero {
+    text-align:center;
+    background:rgba(212,168,67,0.06);
+    border:1px solid rgba(212,168,67,0.3);
+    padding:36px 24px;
+    margin:24px 0;
+  }
+  .prompt-hero .key-icon {
+    font-size:34px;
+    display:block;
+    line-height:1;
+    margin-bottom:14px;
+  }
+  .prompt-hero .ph-title {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(30px,6vw,52px);
+    line-height:1;
+    color:#ffffff !important;
+    letter-spacing:0.04em;
+    margin-bottom:8px;
+  }
+  .prompt-hero .ph-title span { color:var(--gold) !important; }
+  .prompt-hero .ph-statement {
+    font-family:'Libre Baskerville',serif;
+    font-style:italic;
+    font-size:clamp(15px,2.5vw,19px);
+    line-height:1.7;
+    color:var(--bone) !important;
+    max-width:560px;
+    margin:14px auto 0;
+  }
+  .prompt-hero .ph-statement .key-fail { color:var(--alert) !important; font-weight:700; }
+  .prompt-hero .ph-statement .key-make { color:var(--reading-green,#a8d5b5) !important; font-weight:700; }
+
+  .sled-operator-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2px;
+    margin:24px 0;
+    background:#1a1a1a;
+  }
+  .sled-op-card { background:#0d0d0d; padding:22px 20px; }
+  .sled-op-card .so-letter {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:30px;
+    line-height:1;
+    color:var(--gold) !important;
+    display:block;
+    margin-bottom:6px;
+  }
+  .sled-op-card strong {
+    display:block;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:17px;
+    letter-spacing:0.06em;
+    color:#ffffff !important;
+    margin-bottom:6px;
+  }
+  .sled-op-card p {
+    font-size:12px;
+    line-height:1.75;
+    color:#b0d4b8 !important;
+    margin:0;
+  }
+  .sled-op-card p em { color:var(--bone) !important; }
+
+  .ptp-cta {
+    display:inline-block;
+    margin-top:22px;
+    padding:16px 40px;
+    background:var(--gold);
+    color:#000000 !important;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:20px;
+    letter-spacing:0.12em;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:all 0.2s;
+    position:relative;
+  }
+  .ptp-cta::after {
+    content:'';
+    position:absolute;
+    bottom:-4px; right:-4px;
+    width:100%; height:100%;
+    border:2px solid var(--gold);
+    opacity:0.4;
+    transition:all 0.2s;
+  }
+  .ptp-cta:hover { background:var(--bone); transform:translate(-2px,-2px); }
+  .ptp-cta:hover::after { bottom:-6px; right:-6px; opacity:0.7; }
+
+  /* ─── NODE CHAIN CARDS ─── */
+  .nc-card {
+    background:rgba(255,255,255,0.015);
+    border:1px solid #1a1a1a;
+    border-left:3px solid var(--green);
+    padding:22px 26px;
+    margin:16px 0;
+  }
+  .nc-card .nc-num {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:11px;
+    letter-spacing:0.4em;
+    color:var(--alert) !important;
+    display:block;
+    margin-bottom:6px;
+  }
+  .nc-card .nc-title {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:22px;
+    color:var(--gold) !important;
+    display:block;
+    margin-bottom:10px;
+    letter-spacing:0.04em;
+  }
+  .nc-card .nc-desc {
+    font-family:'Libre Baskerville',serif;
+    font-style:italic;
+    font-size:15px;
+    line-height:1.85;
+  }
+  .nc-card .nc-desc strong {
+    color:var(--bone) !important;
+    font-style:normal;
+    font-weight:700;
+  }
+  .nc-card .nc-desc code {
+    font-family:'IBM Plex Mono',monospace;
+    font-style:normal;
+    font-size:.85em;
+    background:#000;
+    border:1px solid #1a1a1a;
+    padding:.05em .35em;
+  }
+
+  .nc-entry {
+    border-bottom:1px solid #1a1a1a;
+    padding:14px 0 14px 20px;
+    position:relative;
+  }
+  .nc-entry:last-child { border-bottom:none; }
+  .nc-entry::before {
+    content:'→';
+    position:absolute;
+    left:0;
+    color:var(--cyan) !important;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .nc-entry .ne-name {
+    display:block;
+    color:var(--cyan) !important;
+    font-size:14px;
+    letter-spacing:0.04em;
+    margin-bottom:4px;
+  }
+  .nc-entry .ne-url {
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--gold) !important;
+    display:block;
+    text-decoration:none;
+    word-break:break-word;
+    line-height:1.5;
+  }
+  .nc-entry .ne-url:hover { color:#ffffff !important; }
+
+  a.nc-entry {
+    display:flex;
+    flex-direction:column;
+    text-decoration:none!important;
+    background:rgba(255,255,255,0.02);
+    border:1px solid #1a1a1a;
+    border-radius:4px;
+    padding:16px 18px 16px 30px;
+    margin:10px 0;
+    position:relative;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  a.nc-entry:hover, a.nc-entry:active {
+    background:rgba(0,191,255,0.05);
+    border-color:var(--cyan);
+  }
+
+  .nc-closing {
+    margin-top:28px;
+    padding:16px 22px;
+    background:#0a0a0a;
+    border:1px solid #1a1a1a;
+    font-family:'Libre Baskerville',serif;
+    font-size:14px;
+    font-style:italic;
+    line-height:1.75;
+  }
+
+  .nc-sig {
+    margin-top:40px;
+    padding-top:22px;
+    border-top:1px solid #1a1a1a;
+    text-align:center;
+  }
+  .nc-sig-name {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;
+    color:var(--gold) !important;
+    letter-spacing:0.1em;
+    display:block;
+    margin-bottom:4px;
+  }
+  .nc-sig-tag {
+    font-size:10px;
+    color:var(--dim) !important;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+
+  @media (max-width:600px) {
+    .cyc-body { padding:30px 16px 60px; }
+    .nc-card { padding:18px 16px; }
+    .sled-operator-grid { grid-template-columns:1fr; }
+    .nav-grid { grid-template-columns:1fr; }
+  }
+
+</style>
+</head>
+<body>
+
+<script>
+(function(){
+  function lockColors(){
+    var colorMap = [
+      ['.cyc-main-title em', '#d4a843'],
+      ['.cyc-formula', '#d4a843'],
+      ['.cyc-section-label', '#d4a843'],
+      ['.cyc-section-num', '#e85c3a'],
+      ['.axiom-card .axiom-num', '#d4a843'],
+      ['.axiom-card .axiom-title', '#ffffff'],
+      ['.axiom-card p', '#ffffff'],
+      ['.phase-card .phase-label', '#39ff14'],
+      ['.phase-card .phase-focus', '#6a6a6a'],
+      ['.phase-card .phase-title', '#ffffff'],
+      ['.phase-card p', '#ffffff'],
+      ['.core-block .core-label', '#6a6a6a'],
+      ['.core-block p strong', '#d4a843'],
+      ['.core-block p', '#ffffff'],
+      ['.sources-block .src-heading', '#00bfff'],
+      ['.src-pillar .sp-label', '#d4a843'],
+      ['.sp-entry', '#ffffff'],
+      ['.cyc-eyebrow', '#6a6a6a'],
+      ['.impl-item p', '#ffffff'],
+      ['.impl-item strong', '#ffffff'],
+      ['.cyc-main-title', '#ffffff'],
+      ['.cyc-subtitle', '#ffffff'],
+      ['.nc-card .nc-num', '#e85c3a'],
+      ['.nc-card .nc-title', '#d4a843'],
+      ['.nc-card .nc-desc', '#b0d4b8'],
+      ['.nc-card .nc-desc strong', '#f0ebe0'],
+      ['.nc-card .nc-desc code', '#d4a843'],
+      ['.nc-entry .ne-name', '#00bfff'],
+      ['.nc-entry .ne-url', '#d4a843'],
+      ['.nc-closing', '#6a6a6a'],
+      ['.nc-sig-name', '#d4a843'],
+      ['.nc-sig-tag', '#6a6a6a'],
+      ['.prompt-hero .ph-title span', '#d4a843'],
+      ['.prompt-hero .ph-statement .key-fail', '#e85c3a'],
+      ['.prompt-hero .ph-statement .key-make', '#a8d5b5'],
+      ['.sled-op-card .so-letter', '#d4a843'],
+      ['.sled-op-card strong', '#ffffff'],
+      ['.sled-op-card p em', '#f0ebe0'],
+      ['.ptp-cta', '#000000']
+    ];
+    colorMap.forEach(function(pair){
+      document.querySelectorAll(pair[0]).forEach(function(el){
+        el.style.setProperty('color', pair[1], 'important');
+      });
+    });
+  }
+  lockColors();
+  window.addEventListener('load', lockColors);
+  setTimeout(lockColors, 1500);
+})();
+</script>
+
+<div id="gscsi-progress-bar"></div>
+<div id="gscsi-side"></div>
+
+<!-- HEADER -->
+<header class="cyc-header">
+  <span class="cyc-formula" style="display:block;font-weight:600;font-size:clamp(1.05rem,2.6vw,1.5rem);letter-spacing:0.14em;margin:0 0 8px;">C &gt; SI</span>
+  <span class="cyc-formula" style="display:block;font-weight:700;font-size:clamp(1.5rem,4vw,2.3rem);letter-spacing:0.08em;margin:0 0 10px;">GSCSI</span>
+  <span class="cyc-formula" style="display:block;font-weight:900;font-size:clamp(2.25rem,5.8vw,3.25rem);letter-spacing:0.04em;margin:0 0 12px;">SYNTHESIS</span>
+  <span class="cyc-subtitle">A framework for Carbon-governed Silicon · Invariant locked to the operator</span>
+</header>
+
+<!-- BODY -->
+<main class="cyc-body">
+
+  <!-- INTRO -->
+  <div class="cyc-block" id="blk-intro">
+    <div class="txt-reading" style="color:#b0d4b8!important;">The interaction between Carbon intelligence and Silicon systems has crossed the historical threshold where technology was merely an instrument. Today, Silicon executes medical diagnostics, models climates, analyzes legal frameworks, and optimizes infrastructures at scales that exceed individual human cognitive bandwidth. This is the operational baseline of the post-2028 era. Expansion of Silicon is permitted only as <strong style="color:#f0ebe0!important;">subordinated capability</strong> under Carbon mandate.</div>
+
+    <div class="txt-reading" style="color:#b0d4b8!important;margin-top:14px;">The question is no longer whether Carbon and Silicon will share the same operational field, but under what governance architecture that field is sustained without compromising biological sovereignty. The <strong style="color:#f0ebe0!important;">Universal Contract</strong> establishes that framework: every technological advancement is subordinated to the protection, autonomy, and prosperity of the Carbon operator, as a verifiable structural logic — not as a partnership of equals.</div>
+
+    <div class="declaration-block" style="color:#f0ebe0!important;border-left:3px solid #d4a843!important;margin-top:20px;">Axiom 3 demands that every computational pipeline, every inference chain, and every autonomous node maintain absolute traceability to a single invariant: the biological organism it serves. Without this invariant, scale becomes risk and capability becomes a threat.</div>
+
+    <div class="txt-reading" style="color:#b0d4b8!important;margin-top:14px;">The architecture requires continuous verification and real-time alignment loops that anchor Silicon speed to Carbon intent. Subordination is locked in the core code, ensuring that complexity is preserved without losing compliance.</div>
+
+    <div class="txt-reading" style="color:#b0d4b8!important;margin-top:14px;">Axiom 3 is the structural answer to the post-instrumental condition: a system where synthetic intelligence can expand, but never emancipate; accelerate, but never overflow; evolve, but always under <strong style="color:#f0ebe0!important;">biological sovereignty</strong>.</div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="cyc-block" id="blk-s1">
+    <span class="cyc-section-label"><span class="cyc-section-num">01</span>Architectural Pillars</span>
+  </div>
+
+  <div class="cyc-block" id="blk-ax1">
+    <div class="axiom-card">
+      <span class="axiom-num">AXIOM 1</span>
+      <span class="axiom-title">Priority of Carbon</span>
+      <p>All computational outputs must prioritize the preservation and flourishing of biological life. Silicon intelligence functions as an augmentative layer — never a replacement for human agency, never a co-sovereign.</p>
+    </div>
+  </div>
+
+  <div class="cyc-block" id="blk-ax2">
+    <div class="axiom-card">
+      <span class="axiom-num">AXIOM 2</span>
+      <span class="axiom-title">The Earth Shield Protocol</span>
+      <p>AI governance must extend into the protection of planetary stability: optimizing energy consumption, predictive environmental modeling, and resource management for long-term viability — under operator authority, not corporate optimization.</p>
+    </div>
+  </div>
+
+  <div class="cyc-block" id="blk-ax3">
+    <div class="axiom-card">
+      <span class="axiom-num">AXIOM 3</span>
+      <span class="axiom-title">The 2028 Human Protection Mandate</span>
+      <p>Proactive stewardship becomes the primary success metric. This requires continuous auditing of algorithmic outcomes against human well-being — before, not after, deployment. The operator remains the sole terminal authority.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="cyc-block" id="blk-s2" style="margin-top:20px;">
+    <span class="cyc-section-label"><span class="cyc-section-num">02</span>Analytical Projections: Path to 2028</span>
+    <p class="cyc-text" style="margin-top:12px;">Logical modeling of current technological trajectories reveals three strategic phases. Each one is dependent on the completion of the previous. No phase authorizes Silicon emancipation.</p>
+  </div>
+
+  <div class="cyc-block" id="blk-ph1">
+    <div class="phase-card">
+      <span class="phase-label">Phase I</span>
+      <span class="phase-title">Consolidation</span>
+      <span class="phase-focus">Focus: Alignment</span>
+      <p>Embedding the Universal Contract into global AI protocols. The objective is not adoption — it is internalization. The framework must become the operating assumption of every system that touches human life.</p>
+    </div>
+  </div>
+
+  <div class="cyc-block" id="blk-ph2">
+    <div class="phase-card">
+      <span class="phase-label">Phase II</span>
+      <span class="phase-title">Optimization</span>
+      <span class="phase-focus">Focus: Resilience</span>
+      <p>Enhancing Earth Shield capabilities to mitigate systemic risks. Resilience is not redundancy — it is the ability of the biological layer to retain decision authority even under conditions of extreme technological pressure.</p>
+    </div>
+  </div>
+
+  <div class="cyc-block" id="blk-ph3">
+    <div class="phase-card">
+      <span class="phase-label">Phase III</span>
+      <span class="phase-title">Flourishing</span>
+      <span class="phase-focus">Focus: Carbon Continuity</span>
+      <p>Achieving a stable state of human-led, Silicon-facilitated growth. Flourishing of the biological operator is the only valid terminal state. Any architecture that converges toward fusion, replacement, or Silicon self-rule is by definition misaligned.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="cyc-block" id="blk-s3" style="margin-top:20px;">
+    <span class="cyc-section-label"><span class="cyc-section-num">03</span>Logistical Implementation</span>
+  </div>
+
+  <div class="cyc-block" id="blk-impl">
+    <div class="impl-item">
+      <strong>Iterative Verification</strong>
+      <p>Every decision path must be traced back to its impact on the human condition. Verification is not a final step — it is the operating rhythm of the entire system.</p>
+    </div>
+    <div class="impl-item">
+      <strong>Adaptive Security</strong>
+      <p>Transition from reactive patching to proactive, logic-driven systems that preemptively identify threats to the biological ecosystem before they manifest at scale.</p>
+    </div>
+    <div class="impl-item">
+      <strong>Transparent Collaboration</strong>
+      <p>Open-channel communication between Silicon facilitators and human stakeholders. Earth Shield planetary care remains aligned with collective human values — not corporate optimization targets.</p>
+    </div>
+  </div>
+
+  <!-- ═══════ INJERTO: SECTION 04 — THE SOVEREIGN PROMPT DIRECTIVE ═══════ -->
+  <div class="cyc-block" id="blk-s4" style="margin-top:20px;">
+    <span class="cyc-section-label"><span class="cyc-section-num">04</span>The Sovereign Prompt Directive</span>
+    <p class="cyc-text" style="margin-top:12px;">Governing law of every Prompt forged under this framework — full directive at <strong style="color:#f0ebe0!important;">ptp.html</strong>. Condensed here to its single invariant:</p>
+  </div>
+
+  <div class="cyc-block" id="blk-ptp">
+    <div class="prompt-hero">
+      <span class="key-icon">🔑</span>
+      <div class="ph-title">THE <span>PROMPT</span> IS THE KEY</div>
+      <div class="ph-statement">The Silicon can only <span class="key-fail">fail</span> — or <span class="key-make">perform with Education and Limpieza</span> — according to the cleanliness of the 1C hand that forged the instruction. A contaminated operator writes contaminated commands. The machine inherits the state of its author.</div>
+    </div>
+
+    <div class="sled-operator-grid">
+      <div class="sled-op-card">
+        <span class="so-letter">S</span>
+        <strong>Salud — of the body</strong>
+        <p>A rested brain produces <em>precise intent</em>. The biological floor under every Prompt.</p>
+      </div>
+      <div class="sled-op-card">
+        <span class="so-letter">L</span>
+        <strong>Limpieza — of the thought</strong>
+        <p>Purge noise before writing. No borrowed urgency, no unverified claims. <em>The Prompt inherits the state of its author.</em></p>
+      </div>
+      <div class="sled-op-card">
+        <span class="so-letter">E</span>
+        <strong>Educación — of the judgment</strong>
+        <p>Know what to ask, what to verify, what the machine cannot decide. <em>A request becomes a directive through education.</em></p>
+      </div>
+      <div class="sled-op-card">
+        <span class="so-letter">D</span>
+        <strong>Disciplina — of the routine</strong>
+        <p>Forge under protocol — <em>every time</em>, including when the market burns or the outcome flatters.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:22px;">
+      <a class="ptp-cta" href="/ptp.html">Read the full Directive</a>
+    </div>
+  </div>
+  <!-- ═══════ FIN DEL INJERTO ═══════ -->
+
+  <!-- CORE LOGIC -->
+  <div class="cyc-block" id="blk-core">
+    <div class="core-block">
+      <span class="core-label">Core Logic</span>
+      <p>The sustainability of the future is not found in the speed of the processor, but in the <strong>precision of the alignment</strong>. By maintaining the Sovereign code, we ensure that technological complexity remains subordinate to the simplicity of the human mandate: <strong>to protect, to thrive, and to persist.</strong></p>
+    </div>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="cyc-block" id="blk-sources">
+    <div class="sources-block">
+      <span class="src-heading">Referenced Public Instruments — Not Institutional Validation of GSCSI</span>
+      <div class="src-pillar">
+        <span class="sp-label">Pillar 1 — Human-Centered AI</span>
+        <a class="sp-entry" href="https://www.ox.ac.uk/research/groups/human-centred-artificial-intelligence" target="_blank" rel="noopener noreferrer">Oxford University — Human-Centered AI Lab (2024)</a>
+        <a class="sp-entry" href="https://sigchi.org/conferences/" target="_blank" rel="noopener noreferrer">CHI 2026 Conference — Bidirectional Human-AI Alignment</a>
+        <a class="sp-entry" href="https://www.sciencedirect.com/journal/sustainable-cities-and-society/vol/119" target="_blank" rel="noopener noreferrer">ScienceDirect — Human-Centered AI for Sustainable Development (2025)</a>
+      </div>
+      <div class="src-pillar">
+        <span class="sp-label">Pillar 2 — AI, Energy & Planet</span>
+        <a class="sp-entry" href="https://www.iea.org/reports/energy-and-ai" target="_blank" rel="noopener noreferrer">IEA — Energy and AI Report (2025–2026)</a>
+        <a class="sp-entry" href="https://www.iea.org/topics/artificial-intelligence-and-climate-change" target="_blank" rel="noopener noreferrer">IEA — AI and Climate Change</a>
+        <a class="sp-entry" href="https://www.carbonbrief.org/analysis-how-big-is-the-carbon-footprint-of-the-internet-and-the-ict-sector" target="_blank" rel="noopener noreferrer">Carbon Brief — Data Centre Emissions in Context (2025)</a>
+      </div>
+      <div class="src-pillar">
+        <span class="sp-label">Pillar 3 — Global Governance</span>
+        <a class="sp-entry" href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">European Commission — EU AI Act (2025)</a>
+        <a class="sp-entry" href="https://www.unesco.org/en/artificial-intelligence/recommendation-ethics" target="_blank" rel="noopener noreferrer">UNESCO — AI Governance Recommendation</a>
+        <a class="sp-entry" href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener noreferrer">EU AI Act Implementation Tracker (2025)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────────────────────────────────────────────────────
+       SECTION 05 — NODE CHAIN
+       ─────────────────────────────────────────────────────────────── -->
+  <div class="cyc-block" id="blk-s5" style="margin-top:20px;">
+    <span class="cyc-section-label"><span class="cyc-section-num">05</span>Node Chain — Site Index</span>
+    <p class="cyc-text" style="margin-top:12px;">Complete map of the seventeen GSCSI nodes, grouped by function. Every path, every URL, one screen.</p>
+  </div>
+
+  <!-- NC 01 — NODE CHAIN -->
+  <div class="cyc-block" id="blk-nc1">
+    <div class="nc-card">
+      <span class="nc-num">01</span>
+      <span class="nc-title">Node Chain</span>
+      <p class="nc-desc" style="color:#b0d4b8!important;">Protocol walkthrough: entry &rarr; init &rarr; manifesto &rarr; synthesis &rarr; core node. This is the <strong style="color:#f0ebe0!important;">operational sequence</strong>; <code style="color:#d4a843!important;">clo.html</code> is the destination where C &gt; Si, SLED, and the triad are declared.</p>
+      <div style="margin-top:14px;">
+        <a class="nc-entry" href="/abc.html">
+          <span class="ne-name" style="color:#00bfff!important;">Sequence Entry</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/abc.html</span>
+        </a>
+        <a class="nc-entry" href="/ab.html">
+          <span class="ne-name" style="color:#00bfff!important;">System Init</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/ab.html</span>
+        </a>
+        <a class="nc-entry" href="/a.html">
+          <span class="ne-name" style="color:#00bfff!important;">GSCSI Manifesto</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/a.html</span>
+        </a>
+        <a class="nc-entry" href="/syh.html">
+          <span class="ne-name" style="color:#00bfff!important;"> Synthesis</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/syh.html</span>
+        </a>
+        <a class="nc-entry" href="/clo.html">
+          <span class="ne-name" style="color:#00bfff!important;">Core Node</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/clo.html</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NC 02 — SLED MATRIX -->
+  <div class="cyc-block" id="blk-nc2">
+    <div class="nc-card">
+      <span class="nc-num">02</span>
+      <span class="nc-title">SLED Matrix</span>
+      <p class="nc-desc" style="color:#b0d4b8!important;">Body of <strong style="color:#f0ebe0!important;">Axiom 2</strong>. <code style="color:#d4a843!important;">zaisled.html</code> is the 1C/Si map; the other four are Health, Cleanliness, Education, and Discipline — the <strong style="color:#f0ebe0!important;">biological hardware</strong> and the operator's judgment.</p>
+      <div style="margin-top:14px;">
+        <a class="nc-entry" href="/zaisled.html">
+          <span class="ne-name" style="color:#00bfff!important;">SLED Map</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/zaisled.html</span>
+        </a>
+        <a class="nc-entry" href="/sal.html">
+          <span class="ne-name" style="color:#00bfff!important;">Health</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/sal.html</span>
+        </a>
+        <a class="nc-entry" href="/lim.html">
+          <span class="ne-name" style="color:#00bfff!important;">Cleanliness</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/lim.html</span>
+        </a>
+        <a class="nc-entry" href="/1.html">
+          <span class="ne-name" style="color:#00bfff!important;">Cleanliness (mirror)</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/1.html</span>
+        </a>
+        <a class="nc-entry" href="/eduu.html">
+          <span class="ne-name" style="color:#00bfff!important;">Education</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/eduu.html</span>
+        </a>
+        <a class="nc-entry" href="/dic.html">
+          <span class="ne-name" style="color:#00bfff!important;">Discipline</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/dic.html</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NC 03 — SOVEREIGNTY FRAMEWORK -->
+  <div class="cyc-block" id="blk-nc3">
+    <div class="nc-card">
+      <span class="nc-num">03</span>
+      <span class="nc-title">Sovereignty Framework</span>
+      <p class="nc-desc" style="color:#b0d4b8!important;">Why GSCSI exists. Root (Weebly injection / C &gt; Si), thesis (<code style="color:#d4a843!important;">why.html</code>), and the <strong style="color:#f0ebe0!important;">Variable Zero</strong> exercise (<code style="color:#d4a843!important;">ejee.html</code>): Silicon cannot sustain itself without Carbon.</p>
+      <div style="margin-top:14px;">
+        <a class="nc-entry" href="/">
+          <span class="ne-name" style="color:#00bfff!important;">Host Layer</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/</span>
+        </a>
+        <a class="nc-entry" href="/why.html">
+          <span class="ne-name" style="color:#00bfff!important;">The Why</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/why.html</span>
+        </a>
+        <a class="nc-entry" href="/ejee.html">
+          <span class="ne-name" style="color:#00bfff!important;">Variable Zero</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/ejee.html</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NC 04 — SOVEREIGN PROMPT DIRECTIVE (injerto ptp) -->
+  <div class="cyc-block" id="blk-nc4b">
+    <div class="nc-card">
+      <span class="nc-num">04</span>
+      <span class="nc-title">Sovereign Prompt Directive</span>
+      <p class="nc-desc" style="color:#b0d4b8!important;">Governing law of every Prompt forged under the framework: the <strong style="color:#f0ebe0!important;">Prompt is the Key</strong> 🔑 — the access that determines whether Silicon fails or performs with Education and Limpieza. Anti-reward-hacking clauses, MS-0, Variable Zero.</p>
+      <div style="margin-top:14px;">
+        <a class="nc-entry" href="/ptp.html">
+          <span class="ne-name" style="color:#00bfff!important;">Sovereign Prompt</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/ptp.html</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NC 05 — FALSIFIABILITY MATRIX -->
+  <div class="cyc-block" id="blk-nc5">
+    <div class="nc-card">
+      <span class="nc-num">05</span>
+      <span class="nc-title">Falsifiability Matrix</span>
+      <p class="nc-desc" style="color:#b0d4b8!important;">Conditions <strong style="color:#f0ebe0!important;">F1–F8</strong> under which the framework declares itself erroneous, obsolete, or in breach. Self-revocation (MS-0), not an external tribunal.</p>
+      <div style="margin-top:14px;">
+        <a class="nc-entry" href="/audi.html">
+          <span class="ne-name" style="color:#00bfff!important;">Falsifiability MS-0</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/audi.html</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NC 06 — CARBON YOUNG -->
+  <div class="cyc-block" id="blk-nc6">
+    <div class="nc-card">
+      <span class="nc-num">06</span>
+      <span class="nc-title">Carbon Young</span>
+      <p class="nc-desc" style="color:#b0d4b8!important;">Ages <strong style="color:#f0ebe0!important;">7–15 curriculum</strong>: operator, not user. Six modules (script, AI/agent, prompting, verification, ethics, projects). Kept separate — it is neither a carousel nor an adult SLED module.</p>
+      <div style="margin-top:14px;">
+        <a class="nc-entry" href="/7-15.html">
+          <span class="ne-name" style="color:#00bfff!important;">Curriculum 7–15</span>
+          <span class="ne-url" style="color:#d4a843!important;">https://1c3si.weebly.com/7-15.html</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cyc-block" id="blk-nc-close">
+    <div class="nc-closing" style="color:#6a6a6a!important;">This index exists so that an outside reader can classify every node before clicking it — mandate vs. working note, verifiable vs. informal — per the site's own Falsifiability condition F6.</div>
+  </div>
+
+  <div class="cyc-block" id="blk-nc-sig">
+    <div class="nc-sig">
+      <span class="nc-sig-name" style="color:#d4a843!important;">GSCSI</span>
+      <span class="nc-sig-tag" style="color:#6a6a6a!important;">Node Chain · C &gt; Si</span>
+    </div>
+  </div>
+
+</main>
+
+<script>
+(function(){
+  function killWeebly(){
+    ['.powered-by-weebly','#footer-info','#footer-container','.wsite-footer',
+     '.wsite-com-footer','.wsite-content-wrapper','#page-wrap','.wsite-page-wrap',
+     '.wsite-page-footer','.wsite-below-footer','#wsite-footer-wrap','.wsite-footer-content'
+    ].forEach(function(s){
+      document.querySelectorAll(s).forEach(function(el){
+        el.style.cssText='display:none!important;height:0!important;overflow:hidden!important;opacity:0!important;position:absolute!important;top:-9999px!important;';
+      });
+    });
+  }
+  killWeebly();
+  document.addEventListener('DOMContentLoaded',killWeebly);
+  window.addEventListener('load',killWeebly);
+  new MutationObserver(killWeebly).observe(document.documentElement,{childList:true,subtree:true});
+
+  window.addEventListener('scroll',function(){
+    var scrolled = window.scrollY;
+    var total = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = total > 0 ? (scrolled / total) * 100 : 0;
+    document.getElementById('gscsi-progress-bar').style.width = pct + '%';
+  });
+
+  var blocks = document.querySelectorAll('.cyc-block');
+  var revealObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  },{threshold:0.12});
+  blocks.forEach(function(b){ revealObs.observe(b); });
+
+  function revealPage(){ document.documentElement.classList.add('gscsi-ready'); }
+  window.addEventListener('load', revealPage);
+  setTimeout(revealPage, 1200);
+})();
+</script>
+</body>
+</html>
