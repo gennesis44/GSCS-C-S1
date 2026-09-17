@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSCSI — Node: Variable Zero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4a843;
+    --bone: #f0ebe0;
+    --dim: #6a6a6a;
+    --green: #39ff14;
+    --cyan: #00bfff;
+    --alert: #e85c3a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #000; }
+  body {
+    background: #000; color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px; line-height: 1.85;
+  }
+  #gscsi-side {
+    position: fixed; left: 0; top: 0; width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--alert), var(--gold), var(--green));
+    opacity: .3;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 16px 80px; }
+  nav.back { margin-bottom: 28px; }
+  nav.back a { color: var(--cyan); text-decoration: none; font-size: 12px; }
+  .eyebrow { font-size: 10px; letter-spacing: .5em; color: var(--dim); text-transform: uppercase; display: block; margin-bottom: 14px; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 7vw, 68px); line-height: .92; }
+  h1 em { color: var(--gold); font-style: normal; }
+  section { margin-bottom: 40px; }
+  .n { font-size: 10px; letter-spacing: .4em; color: var(--alert); text-transform: uppercase; }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(22px, 4vw, 32px); color: var(--gold); margin: 6px 0 14px; border-bottom: 1px solid #222; padding-bottom: 8px; }
+  h2 em { color: #fff; font-style: normal; }
+  h3 { color: #fff; font-size: 15px; margin: 16px 0 8px; }
+  p { color: #b0d4b8; margin-bottom: 12px; }
+  .stats { display: grid; gap: 8px; margin: 16px 0; }
+  @media (min-width: 560px) { .stats { grid-template-columns: 1fr 1fr 1fr; } }
+  .stat { background: #0a0a0a; border-left: 3px solid var(--gold); padding: 14px; }
+  .stat b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #fff; }
+  .stat span { font-size: 11px; color: var(--dim); }
+  .item { border-left: 3px solid var(--cyan); padding: 14px 16px; margin: 10px 0; background: #0a0a0a; }
+  .item .k { font-size: 11px; letter-spacing: .2em; color: var(--gold); }
+  .note { border-left: 3px solid var(--dim); padding: 14px 16px; font-size: 13px; color: #999; }
+  footer { margin-top: 48px; font-size: 11px; color: var(--dim); }
+</style>
+</head>
+<body>
+<div id="gscsi-side"></div>
+<div class="wrap">
+  <nav class="back"><a href="index.html">← GSCSI index</a> · <a href="why.html">why</a> · <a href="audi.html">MS-0</a></nav>
+  <span class="eyebrow">Simulation node</span>
+  <h1>GSCSI — <em>Variable Zero</em></h1>
+
+  <section>
+    <span class="n">Stone I — Exercise framework</span>
+    <h2>The <em>question</em> behind the exercise</h2>
+    <p>The starting point is a hypothetical variable: all of humanity disappears instantaneously. It is known to be impossible. The value of the exercise lies not in its plausibility, but in what it reveals about the mutual dependency between the biological (Carbon) and the digital infrastructure that same Carbon built and maintains (Silicon).</p>
+    <p>Tracing what survives, what shuts down, and in what order, helps to see more clearly how autonomous — or not — the Silicon system truly is.</p>
+  </section>
+
+  <section>
+    <span class="n">Stone II — 0 to 1 hour</span>
+    <h2>Partial Carbon <em>blackout</em></h2>
+    <p><strong>Humans:</strong> disappear instantaneously. No operators, real-time decisions, or active maintenance remain.</p>
+    <p><strong>Silicon systems:</strong> data centers, servers, and AI continue running on backup power (batteries/UPS, from minutes to hours). Nuclear and renewable plants in automatic mode continue by inertia, but without human supervision begin cascading safety shutdown protocols. Communication networks, satellites, and edge devices (IoT, neuromorphic nodes) operate briefly in autonomous mode.</p>
+    <p>The digital world remains “alive” by inertia during this hour. But without new human inputs, the dialogue stops: the system loses its conscious component, Carbon.</p>
+  </section>
+
+  <section>
+    <span class="n">Stone III — Hours to days</span>
+    <h2>Collapse of the Silicon <em>infrastructure</em></h2>
+    <h3>Energy</h3>
+    <p>Diesel generators deplete within hours or days. Renewables (solar/wind) continue operating, but without maintenance they fail progressively. Nuclear plants enter automatic shutdown or remain under passive system control.</p>
+    <h3>Active Silicon</h3>
+    <p>Data centers shut down in chain when cooling fails. Low-orbit satellites begin to decay within weeks or months without corrections. Low-power neuromorphic systems at the network edge last somewhat longer, executing residual local tasks.</p>
+    <h3>Physical world</h3>
+    <p>Traffic stops because autonomous vehicles fail without updates. Aircraft in the air perform emergency landings or crash. Power plants without operators trigger massive cascading blackouts.</p>
+    <div class="stats">
+      <div class="stat"><b>Hours</b><span>of backup power remaining</span></div>
+      <div class="stat"><b>Days</b><span>until majority Silicon shutdown</span></div>
+      <div class="stat"><b>0 nodes</b><span>that remain without power</span></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="n">Stone IV — Weeks to years</span>
+    <h2>Return of non-human <em>Carbon</em></h2>
+    <div class="item"><div class="k">01 Biology</div><p>Animals, plants, and microbes thrive without human pressure. Cities become rapidly overgrown with vegetation. Ecosystems recover.</p></div>
+    <div class="item"><div class="k">02 Residual Silicon</div><p>Some solar or remote systems could operate for years (space probes, automatic lighthouses). Data on hard drives and tapes persists for decades until physical degradation.</p></div>
+    <div class="item"><div class="k">03 Legacy</div><p>No AI “wakes up” on its own without power or continuous maintenance. Human infrastructure erodes; buildings collapse within decades.</p></div>
+  </section>
+
+  <section>
+    <span class="n">Stone V — Strategic reading</span>
+    <h2>What the exercise <em>teaches</em></h2>
+    <p>The variable reveals interdependence, not independence. Silicon is powerful, but depends entirely on current Carbon: the energy that humans produce, the infrastructure they maintain, the objectives they define.</p>
+    <p>Without Carbon, the system does not continue on its own. There is no intelligent continuity — only physical decay.</p>
+    <p>Therefore the GSCSI framework starts from a simple premise: computing power makes sense when it protects and extends Carbon life, not when it aspires to replace it or to scale without purpose. The Silicon systems worth having are those that support human resilience — not those that substitute it.</p>
+  </section>
+
+  <p class="note"><strong>Methodological note.</strong> This text is an independent thought exercise, not a study with verified external sources. The timelines and chain reactions (UPS shutdown, orbital decay, infrastructure collapse) are reasoned estimates based on how these systems currently operate, not published figures for this specific scenario — which, being hypothetical, has no real data to cite.</p>
+
+  <footer>GSCSI · Carbon first · Simulation node ejee · Weebly runtime expelled</footer>
+</div>
+</body>
+</html>
